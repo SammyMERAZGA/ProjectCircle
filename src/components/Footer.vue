@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark padless>
+  <v-footer class="mt-15" dark padless inset app>
     <v-card class="flex" flat tile>
       <v-card-title class="color">
         <strong class="subheading">Nightmare Project Game</strong>

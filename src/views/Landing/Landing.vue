@@ -23,7 +23,7 @@
       <v-btn
         class="rounded-lg mt-10 mb-15 elevation-5"
         color="white"
-        to="/home"
+        to="/context"
         light
         depressed
         >Accéder au jeu</v-btn
