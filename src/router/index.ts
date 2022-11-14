@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from "vue-router";
 import Landing from "@/views/Landing/Landing.vue";
 import Home from "@/views/Home/Home.vue";
 import Context from "@/views/Context/Context.vue";
+import Moe from "@/views/Moe/Moe.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes: Array<RouteConfig> = [
     path: "/context",
     name: "Context",
     component: Context,
+  },
+  {
+    path: "/play/moe",
+    name: "Moe",
+    component: Moe,
   },
 ];
 
