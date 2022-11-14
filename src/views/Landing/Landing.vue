@@ -12,12 +12,8 @@
       <li></li>
       <li></li>
     </ul>
-    <h1 class="mt-10 mb-5 text-center white--text">Project Nightmare</h1>
     <v-row align="center" justify="center">
-      <v-img
-        src="https://www.pokepedia.fr/images/5/5b/Sprite_094_LPA.png"
-        max-width="300"
-      />
+      <v-img src="@/assets/logo.png" max-width="400" />
     </v-row>
     <v-row align="center" justify="center">
       <v-btn
@@ -36,6 +32,7 @@
       shaped
       outlined
     >
+      <h1 class="text-center mt-5">Règles du jeu</h1>
       <h4 class="overline text-decoration-underline mt-10 mb-3 ml-15">
         Règle 1 : Lorem Ipsum
       </h4>

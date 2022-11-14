@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-center mt-10">Contexte</h1>
+  <h1 class="text-center mt-10 white--text">Choisis ta thématique 👇</h1>
 </template>
 
 <script lang="ts" src="./index.ts"></script>
