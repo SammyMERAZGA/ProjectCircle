@@ -13,7 +13,7 @@
       <li></li>
     </ul>
     <v-row align="center" justify="center">
-      <v-img src="@/assets/logo.png" max-width="400" />
+      <v-img src="@/assets/logo.png" max-width="400"></v-img>
     </v-row>
     <v-row align="center" justify="center">
       <v-btn
