@@ -1,0 +1,28 @@
+h1 {
+  color: rgb(32, 12, 129);
+  text-align: center;
+  font-size: 50px;
+  margin-top: 2%;
+  text-shadow: -2px 2px 8px rgba(255,255,255,0.75) 
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.900);
+  text-align: center;
+  margin-top: 1%;
+  font-size: 22px;
+}
+
+#manager {
+  margin-top: 2%;
+  height: 500px;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
