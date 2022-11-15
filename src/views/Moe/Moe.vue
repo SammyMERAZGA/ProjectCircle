@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="white--text text-center mt-10 mb-10">Partie : MOE</h1>
+    <h1 class="black--text text-center mt-10 mb-10">Maîtrise d'oeuvre</h1>
     <v-row align="center" justify="center" v-if="!game1">
       <Transition>
         <v-stepper v-model="e6" vertical width="1000" elevation="8" shaped outlined>
@@ -103,14 +103,23 @@
           v-model="rows"
           tag="v-layout"
           class="row wrap fill-height align-center sortable-list"
-          style="background: grey"
         >
           <v-flex v-for="row in rows" :key="row.index" class="sortable" xs12 my-2 style="background: #fff">
-            <draggable :list="row.items" tag="v-layout" :group="{ name: 'row' }" class="row wrap justify-space-around">
-              <v-flex v-for="item in row.items" :key="item.title" pa-3 class="row-v">
-                <v-card class="rounded-lg elevation-5 ml-2 mr-2" style="height: 50px; width: 100px;">{{ item.title }}</v-card>
-              </v-flex>
-            </draggable>
+            <h1 class="overline text-center" v-if="row.items.length >= 1">{{ row.text }}</h1>
+            <v-row align="center" justify="center">
+              <draggable
+                :list="row.items"
+                tag="v-layout"
+                :group="{ name: 'row' }"
+                style="padding: 10px; display: inline-flex"
+              >
+                <v-flex v-for="item in row.items" :key="item.title" pa-3 class="row-v">
+                  <v-card class="rounded-lg elevation-5 text-center" style="height: 50px; width: 100px">
+                    {{ item.title }}
+                  </v-card>
+                </v-flex>
+              </draggable>
+            </v-row>
           </v-flex>
         </draggable>
       </v-stepper>
