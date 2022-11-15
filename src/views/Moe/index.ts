@@ -16,40 +16,42 @@ export default class Moe extends Vue {
   order = 17;
   rows = [
     {
+      text: "Liste dans le désordre",
       index: 1,
       items: [
         {
           title: "Git init",
-          id: 1,
+          id: 1
         },
-      ],
-    },
-    {
-      index: 2,
-      items: [
         {
           title: "git branch",
-          id: 2,
+          id: 2
         },
         {
           title: "git add",
-          id: 3,
-        },
+          id: 3
+        }
+      ]
+    },
+    {
+      text: "Liste à mettre dans l'ordre",
+      index: 2,
+      items: [
         {
           title: "git commit -m",
-          id: 4,
+          id: 4
         },
         {
           title: "git push origin",
-          id: 5,
+          id: 5
         },
         {
           title: "git merge",
-          id: 6,
-        },
-      ],
-    },
-  ];
+          id: 6
+        }
+      ]
+    }
+  ]
   computed(): void {
     console.log("object");
     if (this.e6 === 6) {
