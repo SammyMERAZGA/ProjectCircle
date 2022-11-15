@@ -4,6 +4,7 @@ import Landing from "@/views/Landing/Landing.vue";
 import Home from "@/views/Home/Home.vue";
 import Context from "@/views/Context/Context.vue";
 import Moe from "@/views/Moe/Moe.vue";
+import Scrum from "@/views/Scrum/Scrum.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes: Array<RouteConfig> = [
     path: "/play/moe",
     name: "Moe",
     component: Moe,
+  },
+  {
+    path: "/play/scrum",
+    name: "Scrum",
+    component: Scrum,
   },
 ];
 
