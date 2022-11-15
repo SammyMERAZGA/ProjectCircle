@@ -41,7 +41,7 @@
               v-bind="attrs"
               v-on="on"
             >
-              <v-icon>mdi-file-document-outline</v-icon>
+              <v-icon>mdi-file-document</v-icon>
             </v-btn>
           </template>
           <v-card class="rounded-xl">
