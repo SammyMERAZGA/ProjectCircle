@@ -62,32 +62,35 @@
         </v-tab>
         <v-tab-item>
           <v-container fluid>
-            <v-row>
-              <p class="body-2 mb-10 ml-15 mr-15">
+              <h2 class="mb-10 ml-15 mr-15 text-center">
                 {{ data }}
+              </h2>
+              <p class="text-center">
+                Faites correspondre l'action avec le rôle
               </p>
-              <v-btn
-                  class="rounded-lg mt-10 mb-15 elevation-5"
-                  color="white"
-                  @click="refreshData(data, role[0])"
-                  light
-                  depressed
-              >{{ role[0] }}</v-btn>
-              <v-btn
-                  class="rounded-lg mt-10 mb-15 elevation-5"
-                  color="white"
-                  @click="refreshData(data, role[1])"
-                  light
-                  depressed
-              >{{ role[1] }}</v-btn>
-              <v-btn
-                  class="rounded-lg mt-10 mb-15 elevation-5"
-                  color="white"
-                  @click="refreshData(data, role[2])"
-                  light
-                  depressed
-              >{{ role[2] }}</v-btn>
-            </v-row>
+            <v-layout justify-center>
+                <v-btn
+                    class="rounded-lg elevation-5 ma-4"
+                    color="white"
+                    @click="refreshData(data, role[0])"
+                    light
+                    depressed
+                >{{ role[0] }}</v-btn>
+                <v-btn
+                    class="rounded-lg elevation-5 ma-4"
+                    color="white"
+                    @click="refreshData(data, role[1])"
+                    light
+                    depressed
+                >{{ role[1] }}</v-btn>
+                <v-btn
+                    class="rounded-lg  elevation-5 ma-4"
+                    color="white"
+                    @click="refreshData(data, role[2])"
+                    light
+                    depressed
+                >{{ role[2] }}</v-btn>
+              </v-layout>
           </v-container>
         </v-tab-item>
       </v-tabs>
@@ -96,4 +99,4 @@
 </template>
 
 <script lang="ts" src="./index.ts"></script>
-<style scoped lang="scss" src="./style.scss"></style>
+<style scoped src="./style.css"></style>
