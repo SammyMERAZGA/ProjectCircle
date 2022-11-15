@@ -1,6 +1,40 @@
 #logo {
-  width: 10%;
-  height: 100%;
+  position: relative;
+  width: 100px;
+  margin-right: 50px;
+}
+
+#image {
+  position: absolute;
+  z-index: 1;
+  margin-top: 35%;
+}
+
+.txt {
+  margin-top: 30%;
+}
+
+.txt_right {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: hidden;
+}
+
+.middle {
+  margin-top: 42%;
+}
+
+.parent {
+  position: relative;
 }
 
 .context {
