@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="black--text text-center mt-10 mb-10">Maîtrise d'oeuvre</h1>
-    <v-row align="center" justify="center" v-if="!game1">
+    <v-row align="center" justify="center" v-if="game1">
       <Transition>
         <v-stepper v-model="e6" vertical width="1000" elevation="8" shaped outlined>
           <!-- 1/5 -->
