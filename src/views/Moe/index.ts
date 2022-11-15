@@ -16,17 +16,13 @@ export default class Moe extends Vue {
     order = 17
     rows = [
         {
+            text: "Liste dans le désordre",
             index: 1,
             items: [
                 {
                     title: "Git init",
                     id: 1
-                }
-            ]
-        },
-        {
-            index: 2,
-            items: [
+                },
                 {
                     title: "git branch",
                     id: 2
@@ -34,7 +30,13 @@ export default class Moe extends Vue {
                 {
                     title: "git add",
                     id: 3
-                },
+                }
+            ]
+        },
+        {
+            text: "Liste à mettre dans l'ordre",
+            index: 2,
+            items: [
                 {
                     title: "git commit -m",
                     id: 4
