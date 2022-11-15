@@ -5,6 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    errorScrum: 0,
+    goodScrum: 0,
   },
   getters: {
   },
