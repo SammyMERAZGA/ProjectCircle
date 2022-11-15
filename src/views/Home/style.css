@@ -1,0 +1,11 @@
+.cardsTheme
+{
+    background: white;
+    transition: all .2s ease-in-out;
+}
+.cardsTheme:hover
+{
+    background-color: rgb(192, 187, 187, 0.9);
+    transform: scale(1.05);
+    cursor: pointer;
+}
