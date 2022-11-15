@@ -1,6 +1,20 @@
 <template>
   <div>
-    <h1 class="text-center mt-10 black--text mb-15">Choisis ta thématique 👇</h1>
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <h1 class="text-center mt-10 black--text mb-15">
+      Choisis ta thématique 👇
+    </h1>
     <v-row class="mt-5" align="center" justify="center">
       <v-card
         class="mr-15 ml-15 mb-15 rounded-xl elevation-15 cardsTheme"
@@ -9,9 +23,6 @@
         :key="t.title"
       >
         <v-img class="white--text align-end" height="200px" :src="t.image">
-          <v-row class="mb-1" align="center" justify="center">
-            <v-card-title>{{ t.title }}</v-card-title>
-          </v-row>
         </v-img>
         <v-card-text class="text--primary">
           <div class="text-center">
@@ -20,7 +31,9 @@
         </v-card-text>
         <v-row justify="center" align="center">
           <v-card-actions>
-            <v-btn class="rounded-xl mb-5" color="pink" text> Choisir ce thème </v-btn>
+            <v-btn class="rounded-xl mb-5" color="pink" :to="t.link" text>
+              Choisir ce thème
+            </v-btn>
           </v-card-actions>
         </v-row>
       </v-card>
