@@ -66,8 +66,15 @@
     </v-row>
     <h3 class="white--text text-center mt-10 mb-5">Lancer le jeu !</h3>
     <v-row class="mb-15" align="center" justify="center">
-      <v-btn class="mt-3 elevation-10" color="white" to="/home" fab x-large light>
-        <v-icon color="pink darken-4">mdi-controller</v-icon>
+      <v-btn
+        class="mt-3 elevation-10"
+        color="white"
+        to="/home"
+        fab
+        x-large
+        light
+      >
+        <v-icon color="#00A1B2">mdi-controller</v-icon>
       </v-btn>
     </v-row>
   </div>

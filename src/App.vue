@@ -26,7 +26,7 @@ export default Vue.extend({
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 #app {
-  background: linear-gradient(#380251, #80185f);
+  background: linear-gradient(#0050D1, #00B6AA);
 }
 
 body {

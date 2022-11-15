@@ -1,7 +1,7 @@
 <template>
   <v-footer id="Footer" dark padless>
     <v-card class="flex" flat tile>
-      <v-card-title class="color">
+      <v-card-title>
         <strong class="subheading">Nightmare Project Game</strong>
 
         <v-spacer></v-spacer>
@@ -27,13 +27,9 @@ export default class Footer extends Vue {
 </script>
 
 <style scoped>
-.color {
-  background: linear-gradient(to right, #1c0352, #480351);
-}
-
 #Footer {
   bottom: 0;
   width: 100%;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 </style>
