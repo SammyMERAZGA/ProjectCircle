@@ -57,9 +57,39 @@
             </v-row>
           </v-container>
         </v-tab-item>
-        <v-tab>
+        <v-tab @click="getData()">
           Enigme
         </v-tab>
+        <v-tab-item>
+          <v-container fluid>
+            <v-row>
+              <p class="body-2 mb-10 ml-15 mr-15">
+                {{ data }}
+              </p>
+              <v-btn
+                  class="rounded-lg mt-10 mb-15 elevation-5"
+                  color="white"
+                  @click="refreshData(data, role[0])"
+                  light
+                  depressed
+              >{{ role[0] }}</v-btn>
+              <v-btn
+                  class="rounded-lg mt-10 mb-15 elevation-5"
+                  color="white"
+                  @click="refreshData(data, role[1])"
+                  light
+                  depressed
+              >{{ role[1] }}</v-btn>
+              <v-btn
+                  class="rounded-lg mt-10 mb-15 elevation-5"
+                  color="white"
+                  @click="refreshData(data, role[2])"
+                  light
+                  depressed
+              >{{ role[2] }}</v-btn>
+            </v-row>
+          </v-container>
+        </v-tab-item>
       </v-tabs>
     </v-card>
   </div>
