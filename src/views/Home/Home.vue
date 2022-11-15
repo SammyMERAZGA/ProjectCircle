@@ -1,18 +1,6 @@
 <template>
   <div>
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <h1 class="text-center mt-10 white--text mb-15">
+    <h1 class="text-center mt-10 black--text mb-15">
       Choisis ta thématique 👇
     </h1>
     <v-row class="mt-5" align="center" justify="center">
@@ -22,9 +10,8 @@
         v-for="t in thematic"
         :key="t.title"
       >
-        <v-img class="white--text align-end" height="200px" :src="t.image">
+        <v-img class="white--text" height="275px" :src="t.image">
           <v-row class="mb-1" align="center" justify="center">
-            <v-card-title>{{ t.title }}</v-card-title>
           </v-row>
         </v-img>
         <v-card-text class="text--primary">
@@ -45,7 +32,7 @@
 </template>
 
 <script lang="ts" src="./index.ts"></script>
-<style src="./style.css"></style>
+<style scoped src="./style.css"></style>
 
 <!--
 #0050D1

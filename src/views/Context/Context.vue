@@ -1,58 +1,6 @@
 <template>
   <div>
-    <div class="stars">
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-      <div class="star"></div>
-    </div>
-    <h1 class="white--text text-center mt-10 mb-10">Contexte</h1>
+    <h1 class="black--text text-center mt-10 mb-10">Contexte</h1>
     <v-row align="center" justify="center">
       <iframe
         id="video"
@@ -64,7 +12,7 @@
         allowfullscreen
       ></iframe>
     </v-row>
-    <h3 class="white--text text-center mt-10 mb-5">Lancer le jeu !</h3>
+    <h3 class="black--text text-center mt-10 mb-5">Lancer le jeu !</h3>
     <v-row class="mb-15" align="center" justify="center">
       <v-btn
         class="mt-3 elevation-10"
@@ -74,11 +22,11 @@
         x-large
         light
       >
-        <v-icon color="#00A1B2">mdi-controller</v-icon>
+        <v-icon color="red darken-1">mdi-controller</v-icon>
       </v-btn>
     </v-row>
   </div>
 </template>
 
 <script lang="ts" src="./index.ts"></script>
-<style scoped lang="scss" src="./style.scss"></style>
+<style scoped src="./style.css"></style>
