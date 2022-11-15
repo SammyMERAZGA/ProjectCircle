@@ -1,16 +1,13 @@
 <template>
   <div>
-    <h1 class="white--text text-center mt-10 mb-10">Partie : Scrum</h1>
+    <h1 class="black--text text-center mt-10 mb-10">Pôle RH</h1>
     <v-card
         class="mx-auto mb-15"
         max-width="1000"
-        elevation="8"
-        shaped
-        outlined
     >
       <v-tabs
           fixed-tabs
-          background-color="indigo"
+          background-color="#0AD0A0"
           dark
       >
         <v-tab>
@@ -91,10 +88,54 @@
                     depressed
                 >{{ role[2] }}</v-btn>
               </v-layout>
+            <p class="ml-15 mr-15">
+              Bonnes réponses d'affilés : {{ goodScrum }}
+            </p>
+            <p class="ml-15 mr-15">
+              Erreur : {{ errorScrum }}
+            </p>
           </v-container>
         </v-tab-item>
       </v-tabs>
     </v-card>
+    <v-dialog v-model="dialogSuccessScrum" width="500">
+      <v-card>
+        <v-card-title class="text-h5 grey lighten-2">Good</v-card-title>
+        <v-card-text class="mt-5">
+          Apprenez vos leçons ! Vous avez un nouvel avertissement <v-icon>mdi-alert-circle-outline</v-icon>
+          Attention, au bout de 3 avertissements vous serez viré.
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" text to="/home">
+            C'est compris
+            <v-btn class="ma-2" text icon color="blue lighten-2">
+              <v-icon>mdi-thumb-up</v-icon>
+            </v-btn>
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    <v-dialog v-model="dialogErrorScrum" width="500">
+      <v-card>
+        <v-card-title class="text-h5 grey lighten-2">Echec</v-card-title>
+        <v-card-text class="mt-5">
+          Apprenez vos leçons ! Vous avez un nouvel avertissement <v-icon>mdi-alert-circle-outline</v-icon>
+          Attention, au bout de 3 avertissements vous serez viré.
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" text @click="dialogErrorScrum = false">
+            C'est compris
+            <v-btn class="ma-2" text icon color="blue lighten-2">
+              <v-icon>mdi-thumb-up</v-icon>
+            </v-btn>
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 

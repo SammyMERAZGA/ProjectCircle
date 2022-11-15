@@ -5,6 +5,10 @@ import { Component } from "vue-property-decorator";
 export default class Context extends Vue {
     e6= 1
     data = '';
+    dialogSuccessScrum = false;
+    dialogErrorScrum = false;
+    errorScrum = this.$store.state.errorScrum;
+    goodScrum = this.$store.state.goodScrum;
     role = ["Product Owner", "Scrum master", "Team member"];
     data_table = ['Il aide l’équipe à respecter la méthode Agile',
         'Il anime les réunions de l’équipe',
@@ -21,28 +25,41 @@ export default class Context extends Vue {
     refreshData(data : string, role : string): void {
         if (role == this.role[1]){
             if (data == this.data_table[0] || data == this.data_table[1]){
-                console.log("OK");
+                this.goodScrum = this.goodScrum + 1;
             }
             else{
-                console.log("NOK");
+                this.errorScrum = this.errorScrum + 1;
             }
         }
         if (role == this.role[0]){
             if (data == this.data_table[2] || data == this.data_table[3]){
-                console.log("OK");
+                this.goodScrum = this.goodScrum + 1;
             }
             else{
-                console.log("NOK");
+                this.errorScrum = this.errorScrum + 1;
             }
         }
         if (role == this.role[2]){
             if (data == this.data_table[4] || data == this.data_table[5]){
-                console.log("OK");
+                this.goodScrum = this.goodScrum + 1;
             }
             else{
-                console.log("NOK");
+                this.errorScrum = this.errorScrum + 1;
             }
         }
+
+        if (this.errorScrum == 2){
+            this.dialogErrorScrum = true;
+            this.goodScrum = 0;
+            this.errorScrum = 0;
+        }
+
+        if (this.goodScrum == 1){
+            this.dialogSuccessScrum = true;
+            this.goodScrum = 0;
+            this.errorScrum = 0;
+        }
+
         this.getData();
     }
 }
