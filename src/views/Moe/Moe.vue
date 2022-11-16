@@ -1,5 +1,8 @@
 <template>
   <div>
+    <v-btn class="ma-5" color="teal" to="/home" fab dark small>
+      <v-icon>mdi-keyboard-return</v-icon>
+    </v-btn>
     <h1 class="black--text text-center mt-10 mb-10">Maîtrise d'oeuvre</h1>
     <v-row justify="center">
       <v-img src="@/assets/moe-icon.png" class="mb-10" max-width="250"></v-img>
@@ -142,13 +145,13 @@
     </v-row>
 
     <!-- SNACKBAR -->
-    <v-snackbar color="green darken-3" v-model="snackbarTrue"
+    <v-snackbar color="green darken-3" v-model="snackbarTrue" :timeout="timeout"
       >Félicitations ! Vous avez trouvé la bonne réponse.
       <template v-slot:action="{ attrs }">
         <v-btn class="rounded-xl" color="white" text v-bind="attrs" @click="snackbarTrue = false"> Fermer </v-btn>
       </template>
     </v-snackbar>
-    <v-snackbar color="red darken-4" v-model="snackbarFalse"
+    <v-snackbar color="red darken-4" v-model="snackbarFalse" :timeout="timeout"
       >Aïe, ce n'est pas la bonne réponse. Vous prenez un avertissement !
       <template v-slot:action="{ attrs }">
         <v-btn class="rounded-xl" color="white" text v-bind="attrs" @click="snackbarFalse = false"> Fermer </v-btn>
