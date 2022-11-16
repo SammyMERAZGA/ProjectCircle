@@ -5,7 +5,12 @@
     </v-btn>
     <h1 class="black--text text-center mb-7">Maîtrise d'oeuvre</h1>
     <!-- DIALOG PRESENTATION DU JEU -->
-    <v-dialog v-model="dialogPresentation" transition="dialog-top-transition" max-width="800" persistent>
+    <v-dialog
+      v-model="dialogPresentation"
+      transition="dialog-bottom-transition"
+      max-width="800"
+      persistent
+    >
       <template @click.stop="dialogPresentation = false">
         <v-card class="rounded-lg" height="600">
           <v-toolbar color="teal darken-2" dark
@@ -173,11 +178,24 @@
     <v-snackbar color="red darken-4" v-model="snackbarFalse" :timeout="timeout"
       >Aïe, ce n'est pas la bonne réponse. Vous prenez un avertissement !
       <template v-slot:action="{ attrs }">
-        <v-btn class="rounded-xl" color="white" text v-bind="attrs" @click="snackbarFalse = false"> Fermer </v-btn>
+        <v-btn
+          class="rounded-xl"
+          color="white"
+          text
+          v-bind="attrs"
+          @click="snackbarFalse = false"
+        >
+          Fermer
+        </v-btn>
       </template>
     </v-snackbar>
     <!-- DIALOG GAME OVER -->
-    <v-dialog v-model="dialogSanction" persistent transition="dialog-top-transition" max-width="600">
+    <v-dialog
+      v-model="dialogSanction"
+      persistent
+      transition="dialog-top-transition"
+      max-width="600"
+    >
       <v-card>
         <v-card-title class="text-h5 grey lighten-2">Echec</v-card-title>
         <v-card-text class="mt-5">
@@ -192,7 +210,12 @@
       </v-card>
     </v-dialog>
     <!-- DIALOG GAME SUCCESS -->
-    <v-dialog v-model="dialogSuccess" persistent transition="dialog-top-transition" max-width="600">
+    <v-dialog
+      v-model="dialogSuccess"
+      persistent
+      transition="dialog-top-transition"
+      max-width="600"
+    >
       <v-card>
         <v-toolbar color="#00796b" dark></v-toolbar>
         <v-card-text>

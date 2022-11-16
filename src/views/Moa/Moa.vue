@@ -33,7 +33,11 @@
     </v-dialog>
     <!-- END DIALOG -->
     <v-row justify="center">
-      <v-img class="mt-5 mb-12" src="@/assets/management.png" max-width="200"></v-img>
+      <v-img
+        class="mt-5 mb-12"
+        src="@/assets/management.png"
+        max-width="200"
+      ></v-img>
     </v-row>
     <v-row class="mb-15" justify="center" align="center">
       <v-card class="elevation-10">
