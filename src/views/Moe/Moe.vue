@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="black--text text-center mt-10 mb-10">Maîtrise d'oeuvre</h1>
-    <v-row align="center" justify="center" v-if="game1">
+    <v-row align="center" justify="center" v-if="!game1">
       <Transition>
         <v-stepper v-model="e6" vertical width="1000" elevation="8" shaped outlined>
           <!-- 1/5 -->
@@ -99,6 +99,7 @@
 
     <v-row align="center" justify="center" v-else>
       <v-stepper v-model="e6" vertical width="1000" elevation="8" shaped outlined style="padding: 50px">
+        <h1 class="text-center mb-5 ml-5 mr-5">Mettez la liste dans l'odre des cycles git ! </h1>
         <draggable
           v-model="rows"
           tag="v-layout"
@@ -114,8 +115,8 @@
                 style="padding: 10px; display: inline-flex"
               >
                 <v-flex v-for="item in row.items" :key="item.title" pa-3 class="row-v">
-                  <v-card class="rounded-lg elevation-5 text-center" style="height: 50px; width: 100px">
-                    {{ item.title }}
+                  <v-card class="rounded-lg elevation-5 text-center" style="height: 60px; width: 150px; display: flex; padding: 10px;">
+                    <p style="margin: auto;" class="overline">{{ item.title }}</p>
                   </v-card>
                 </v-flex>
               </draggable>
