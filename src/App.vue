@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-main>
+      <Navbar />
       <router-view />
     </v-main>
   </v-app>
@@ -8,6 +9,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Navbar from "@/components/Navbar.vue";
 
 export default Vue.extend({
   name: "App",
@@ -15,6 +17,9 @@ export default Vue.extend({
   data: () => ({
     //
   }),
+  components: {
+    Navbar,
+  },
 });
 </script>
 
@@ -39,7 +44,7 @@ body::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0);
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #0AD0A0;
+  background-color: #0ad0a0;
   border-radius: 10px;
 }
 </style>
