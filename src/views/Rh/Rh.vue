@@ -4,8 +4,34 @@
       <v-icon>mdi-keyboard-return</v-icon>
     </v-btn>
     <h1 class="text-center black--text">Ressource humaines</h1>
+    <v-dialog
+        v-model="dialogPresentation"
+        transition="dialog-top-transition"
+        max-width="800"
+        persistent
+    >
+      <template @click.stop="dialogPresentation = false">
+        <v-card class="rounded-lg" height="600">
+          <v-toolbar color="teal darken-2" dark
+          ><v-row align="center" justify="center"
+          ><v-toolbar-title><v-icon x-large color="white">mdi-chat-question-outline</v-icon> Contexte et règles</v-toolbar-title></v-row
+          ></v-toolbar
+          >
+          <v-img class="rounded-lg ma-3" src="@/assets/gif/context.gif" />
+          <v-card-actions class="justify-center">
+            <v-btn
+                class="rounded-md"
+                outlined
+                color="teal darken-3"
+                @click="dialogPresentation = false"
+            >Fermer</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </template>
+    </v-dialog>
     <v-row justify="center">
-      <v-img src="@/assets/management.png" class="mb-10" max-width="250"></v-img>
+      <v-img class="mt-5 mb-12" src="@/assets/RH-ingame.png" max-width="200"></v-img>
     </v-row>
     <v-card
         class="mx-auto mb-15"

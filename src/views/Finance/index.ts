@@ -11,6 +11,7 @@ export default class Finance extends Vue {
     e6 = 1;
     dialog = false;
     snackbar = false;
+    dialogPresentation = true;
     display = "Functional third party";
     dialogSuccessScrum = false;
     dialogErrorScrum = false;
