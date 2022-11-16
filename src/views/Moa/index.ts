@@ -6,6 +6,7 @@ export default class Moa extends Vue {
   snackbarTrue = false;
   snackbarFalse = false;
   snackbarCodeFalse = false;
+  dialogPresentation = true;
 
   dialogGameOver = false;
 

@@ -15,15 +15,15 @@
         <v-card class="rounded-lg" height="600">
           <v-toolbar color="teal darken-2" dark
             ><v-row align="center" justify="center"
-              ><v-toolbar-title>Contexte</v-toolbar-title></v-row
+              ><v-toolbar-title><v-icon x-large color="white">mdi-chat-question-outline</v-icon> Contexte et règles</v-toolbar-title></v-row
             ></v-toolbar
           >
           <v-img class="rounded-lg ma-3" src="@/assets/gif/context.gif" />
-          <v-card-actions class="justify-end">
+          <v-card-actions class="justify-center">
             <v-btn
-              class="rounded-xl"
-              color="red darken-2"
-              text
+              class="rounded-md"
+              outlined
+              color="teal darken-3"
               @click="dialogPresentation = false"
               >Fermer</v-btn
             >

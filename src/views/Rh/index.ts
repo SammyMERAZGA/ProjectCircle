@@ -7,6 +7,7 @@ export default class Context extends Vue {
     snackbarTrue = false;
     snackbarFalse = false;
     timeout = 2000;
+    dialogPresentation = true;
     errorScrum = this.$store.state.errorScrum;
     goodScrum = this.$store.state.goodScrum;
     dialogSanction = false;

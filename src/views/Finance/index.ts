@@ -11,6 +11,7 @@ import { Component } from "vue-property-decorator";
     e6 = 1;
     dialog = false;
     snackbar = false;
+    dialogPresentation = true;
     display = "Functional third party";
     dialogSuccessScrum = false;
     dialogErrorScrum = false;
