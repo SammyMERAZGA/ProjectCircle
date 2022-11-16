@@ -4,7 +4,7 @@ import Landing from "@/views/Landing/Landing.vue";
 import Home from "@/views/Home/Home.vue";
 import Context from "@/views/Context/Context.vue";
 import Moe from "@/views/Moe/Moe.vue";
-import Scrum from "@/views/Scrum/Scrum.vue";
+import Scrum from "@/views/Rh/Rh.vue";
 import Unsuccessful from "@/views/Unsuccessful/Unsuccessful.vue";
 
 Vue.use(VueRouter);

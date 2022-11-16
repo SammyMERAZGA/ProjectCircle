@@ -9,7 +9,7 @@ export default class Context extends Vue {
     dialogErrorScrum = false;
     errorScrum = this.$store.state.errorScrum;
     goodScrum = this.$store.state.goodScrum;
-    role = ["Product Owner", "Scrum master", "Team member"];
+    role = ["Product Owner", "Rh master", "Team member"];
     data_table = ['Il aide l’équipe à respecter la méthode Agile',
         'Il anime les réunions de l’équipe',
         'Définir et communiquer la vision du produit',
