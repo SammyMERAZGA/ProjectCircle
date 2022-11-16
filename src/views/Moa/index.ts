@@ -9,6 +9,7 @@ export default class Moa extends Vue {
   dialogPresentation = true;
 
   dialogGameOver = false;
+  dialogVictory = false;
 
   disableQ2 = true;
   disableQ3 = true;
@@ -56,6 +57,7 @@ export default class Moa extends Vue {
       setTimeout(() => {
         this.$router.push("/home");
       }, 3000);
+      this.dialogVictory = true;
     } else {
       console.log("Vous avez perdu !");
       this.snackbarCodeFalse = true;
