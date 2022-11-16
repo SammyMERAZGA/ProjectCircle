@@ -11,6 +11,7 @@ export default class Moe extends Vue {
   snackbar = false;
   snackbarTrue = false;
   snackbarFalse = false;
+  timeout = 2000;
   game1 = true;
   display = "Functional third party";
   order = 17;
