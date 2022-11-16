@@ -7,10 +7,6 @@
     <v-row justify="center">
       <v-img class="mt-5 mb-12" src="@/assets/management.png" max-width="200"></v-img>
     </v-row>
-    <p class="text-center body mb-10 black--text">
-      À chaque bonne réponse, vous obtiendez un chiffre. Assemblez les chiffres
-      dans l'ordre du bon déroulement d'un projet afin de réussir ce jeu 🥳 !
-    </p>
     <v-row class="mb-15" justify="center" align="center">
       <v-card class="elevation-10">
         <v-tabs
