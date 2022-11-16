@@ -1,9 +1,8 @@
 <template>
   <div>
-    <h1>Vous êtes licencié !</h1>
-    <h2>Vous avez reçu 3 avertissements...</h2>
+    <h1>Vous avez reçu 3 avertissements...</h1>
     <v-row align="center" justify="center">
-      <img id="manager" src="@/assets/manager.png" />
+      <img id="manager" src="@/assets/game-over.png" />
     </v-row>
     <v-row align="center" justify="center">
       <v-btn
