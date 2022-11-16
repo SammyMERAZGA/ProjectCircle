@@ -28,6 +28,10 @@
   overflow-y: hidden;
 }
 
+.non-scrollable {
+  overflow-y: hidden;
+}
+
 .middle {
   margin-top: 42%;
 }

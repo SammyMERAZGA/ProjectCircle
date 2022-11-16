@@ -29,7 +29,7 @@
           <h3 class="overline black--text txt_right">Lancer le jeu</h3>
           <v-icon>mdi-controller</v-icon>
         </v-btn>
-        <v-dialog class="mb-15" v-model="rulesDialog" max-width="600px">
+        <v-dialog class="mb-15 non-scrollable" v-model="rulesDialog" max-width="600px">
           <template v-slot:activator="{ on, attrs }">
             <v-btn
               class="mt-10 rounded-xl"
@@ -42,7 +42,7 @@
               <v-icon>mdi-file-document-outline</v-icon>
             </v-btn>
           </template>
-          <v-card class="rounded-xl hide-scrollbar">
+          <v-card class="hide-scrollbar">
             <v-toolbar id="toolbar" class="mb-5" dark color="teal darken-2">
               <v-row align="center" justify="center">
                 <v-toolbar-title>

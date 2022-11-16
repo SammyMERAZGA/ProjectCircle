@@ -5,7 +5,11 @@
     </v-btn>
     <h1 class="text-center black--text">Maîtrise d'ouvrage</h1>
     <v-row justify="center">
-      <v-img class="mt-5 mb-12" src="@/assets/management.png" max-width="200"></v-img>
+      <v-img
+        class="mt-5 mb-12"
+        src="@/assets/management.png"
+        max-width="200"
+      ></v-img>
     </v-row>
     <v-row class="mb-15" justify="center" align="center">
       <v-card class="elevation-10">

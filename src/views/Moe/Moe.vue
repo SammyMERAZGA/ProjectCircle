@@ -7,7 +7,7 @@
     <!-- DIALOG PRESENTATION DU JEU -->
     <v-dialog
       v-model="dialogPresentation"
-      transition="dialog-top-transition"
+      transition="dialog-bottom-transition"
       max-width="800"
       persistent
     >
@@ -39,6 +39,24 @@
         max-width="193"
         height="200"
       ></v-img>
+    </v-row>
+    <v-row justify="center" align="center">
+      <v-tooltip color="teal darken-2" top>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            class="mx-2 mb-10"
+            fab
+            dark
+            color="teal"
+            v-on="on"
+            v-attrs="attrs"
+            @click="dialogPresentation = true"
+          >
+            <v-icon dark> mdi-information-variant </v-icon>
+          </v-btn>
+        </template>
+        <span>Afficher le contexte et les règles</span>
+      </v-tooltip>
     </v-row>
     <v-row align="center" justify="center" v-if="!game1">
       <Transition>
@@ -254,11 +272,24 @@
     <v-snackbar color="red darken-4" v-model="snackbarFalse" :timeout="timeout"
       >Aïe, ce n'est pas la bonne réponse. Vous prenez un avertissement !
       <template v-slot:action="{ attrs }">
-        <v-btn class="rounded-xl" color="white" text v-bind="attrs" @click="snackbarFalse = false"> Fermer </v-btn>
+        <v-btn
+          class="rounded-xl"
+          color="white"
+          text
+          v-bind="attrs"
+          @click="snackbarFalse = false"
+        >
+          Fermer
+        </v-btn>
       </template>
     </v-snackbar>
     <!-- DIALOG GAME OVER -->
-    <v-dialog v-model="dialogSanction" persistent transition="dialog-top-transition" max-width="600">
+    <v-dialog
+      v-model="dialogSanction"
+      persistent
+      transition="dialog-top-transition"
+      max-width="600"
+    >
       <v-card>
         <v-card-title class="text-h5 grey lighten-2">Echec</v-card-title>
         <v-card-text class="mt-5">
@@ -273,13 +304,18 @@
       </v-card>
     </v-dialog>
     <!-- DIALOG GAME SUCCESS -->
-    <v-dialog v-model="dialogSuccess" persistent transition="dialog-top-transition" max-width="600">
+    <v-dialog
+      v-model="dialogSuccess"
+      persistent
+      transition="dialog-top-transition"
+      max-width="600"
+    >
       <v-card>
         <v-toolbar color="#00796b" dark></v-toolbar>
         <v-card-text>
           <v-row align="center" justify="center">
             <div class="text-h2 pa-12">Bravo</div>
-            <p class="text-center">Vous avez réussi le mini jeu ! </p>
+            <p class="text-center">Vous avez réussi le mini jeu !</p>
           </v-row>
         </v-card-text>
         <v-card-actions>
