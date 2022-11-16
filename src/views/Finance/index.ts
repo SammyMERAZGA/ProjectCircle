@@ -1,24 +1,23 @@
 import Vue from "vue";
 import draggable from "vuedraggable";
-import {Component} from "vue-property-decorator";
+import { Component } from "vue-property-decorator";
 
 @Component({
     components: {
-        draggable,
+        draggable
     },
 })
-@Component
-export default class Finance extends Vue {
+    export default class Finance extends Vue {
     e6 = 1;
     dialog = false;
     snackbar = false;
-    game1 = true;
     display = "Functional third party";
     dialogSuccessScrum = false;
     dialogErrorScrum = false;
+    nbLives = 3;
     rows = [
         {
-            text: "Liste dans le désordre",
+            text: "Liste",
             index: 1,
             items: [
                 {
@@ -50,70 +49,64 @@ export default class Finance extends Vue {
             index: 3,
             items: [
                 {
-                    title: "Entreprises" +
-                        " - Sites d’aide " +
-                        " - Journaux" +
-                        " - Ecoles" +
-                        " - Facultés",
-                    id: 2
+                    title: "Internet - Instagram - TikTok - LinkedIn",
+                    id: 3
                 }
             ]
         },
         {
             text: "Propositions de valeur",
             index: 4,
-            items: []
+            items: [{
+                title: "Aider les étudiants à mieux appréhender le milieu professionnel " +
+                    "- Proposer du contenu interactif - " +
+                    "Aider à savoir bien postuler à une offre d’emploi",
+                id: 4
+            }]
         },
         {
             text: "Relation client/Canaux de distribution",
             index: 5,
-            items: []
+            items: [{
+                title: "Fournir un modèle de curriculum vitae - Fournir un modèle de lettre de motivation " +
+                    "- Récolter divers témoignages étudiants - Créer des articles - Créer du contenu vidéo",
+                id: 5
+            }]
         },
         {
             text: "Relation client",
             index: 6,
-            items: []
+            items: [{
+                title: "Entraide - Bienveillance - Conseil",
+                id: 6
+            }]
         },
         {
             text: "Segment de clientèle",
             index: 7,
-            items: []
+            items: [{
+                title: "Internet - Instagram - TikTok - LinkedIn",
+                id: 7
+            }]
         },
         {
             text: "Structure des coûts",
-            index: 7,
-            items: []
+            index: 8,
+            items: [{
+                title: "18/25 ans - Etudiants - Public en recherche d’alternance",
+                id: 8
+            }]
         },
         {
             text: "Flux de revenus",
-            index: 7,
-            items: []
+            index: 9,
+            items: [{
+                title: "Ordinateurs, écrans - Hébergeur - Serveur " +
+                    "- Licence et outils de développement et de gestion de base de données " +
+                    "- Licence et outils de montage photo/vidéo - Studio photo",
+                id: 9
+            }]
         }
     ];
 
-    computed(): void {
-        console.log("object");
-        if (this.e6 === 6) {
-            alert("fini");
-        }
-    }
-
-    changeCard(numCard: number, valide: boolean) {
-        this.e6 = numCard;
-
-        if (valide === false) {
-            this.dialog = true;
-        } else {
-            this.snackbar = true;
-        }
-        if (numCard === 6) {
-            setTimeout(() => {
-                this.nextLevel();
-            }, 1000);
-        }
-    }
-
-    nextLevel() {
-        this.game1 = false;
-    }
 }

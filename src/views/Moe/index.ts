@@ -71,7 +71,7 @@ export default class Moe extends Vue {
       this.dialogSanction = true;
     }
   }
-  
+
   checkResult() {
     let itemsIdx = 1
     let error = false
