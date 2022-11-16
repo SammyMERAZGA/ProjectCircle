@@ -7,6 +7,7 @@ import { Component } from "vue-property-decorator";
   },
 })
 export default class Moe extends Vue {
+  dialogPresentation = true;
   e6 = 1;
   snackbar = false;
   snackbarTrue = false;
@@ -27,19 +28,29 @@ export default class Moe extends Vue {
       items: [
         {
           title: "Git init",
-          id: 1
+          id: 1,
         },
         {
           title: "git branch",
-          id: 2
+          id: 2,
         },
         {
           title: "git add",
-          id: 3
+          id: 3,
+        },
+      ],
+    },
+    {
+      text: "Liste à mettre dans l'ordre",
+      index: 2,
+      items: [
+        {
+          title: "git commit -m",
+          id: 4,
         },
         {
           title: "git push origin",
-          id: 5
+          id: 5,
         },
         {
           title: "git merge",
