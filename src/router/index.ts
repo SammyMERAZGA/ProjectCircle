@@ -37,7 +37,7 @@ const routes: Array<RouteConfig> = [
     component: Moa,
   },
   {
-    path: "/play/scrum",
+    path: "/play/rh",
     name: "Scrum",
     component: Scrum,
   },
