@@ -2,7 +2,7 @@
   <v-app-bar
     v-if="$route.path !== '/' && $route.path !== '/context'"
     app
-    color="#53CDC5"
+    color="#00796B"
     flat
     height="40px"
   >
