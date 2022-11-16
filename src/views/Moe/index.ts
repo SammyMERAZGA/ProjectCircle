@@ -58,16 +58,6 @@ export default class Moe extends Vue {
         }
       ]
     },
-    {
-      text: "Liste à mettre dans l'ordre",
-      index: 2,
-      items: [
-        {
-          title: "git commit -m",
-          id: 4
-        }
-      ]
-    }
   ]
   computed(): void {
     console.log("object");

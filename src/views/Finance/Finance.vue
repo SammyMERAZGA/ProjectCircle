@@ -46,35 +46,71 @@
         </v-tab-item>
         <v-tab> Enigme </v-tab>
         <v-tab-item>
-          <v-row align="center" justify="center">
-            <v-stepper v-model="e6" vertical width="1000" elevation="8" shaped outlined style="padding: 50px">
-              <draggable v-model="rows" tag="v-layout" class="row wrap fill-height align-center sortable-list">
-                <v-flex v-for="row in rows" :key="row.index" class="sortable" xs12 my-2 style="background: #fff">
-                  <h1 class="overline text-center">{{ row.text }}</h1>
-                  <v-card v-if="row.items.length === 0" color="dark" class="ma-10"> </v-card>
-                  <v-row align="center" justify="center">
-                    <draggable
-                      :list="row.items"
-                      tag="v-layout"
-                      :group="{ name: 'row' }"
-                      style="padding: 10px; display: inline-flex"
-                    >
-                      <v-card class="text-center" color="#00796b2e" width="1001" style="display: flex; padding: 10px">
-                        <v-flex v-for="item in row.items" :key="item.title" pa-3 class="row-v">
-                          <v-card
-                            class="rounded-lg elevation-5 text-center"
-                            style="display: flex; padding: 10px; max-width: 400px; margin: auto"
-                          >
-                            <p style="margin: auto" class="overline">{{ item.title }}</p>
-                          </v-card>
-                        </v-flex>
-                      </v-card>
-                    </draggable>
-                  </v-row>
-                </v-flex>
-              </draggable>
-            </v-stepper>
-          </v-row>
+          <v-container>
+            <v-row>
+              <!-- LEFT CONTENT -->
+              <v-col cols="12" sm="6">
+                <draggable v-model="rows" tag="v-layout" class="row wrap fill-height align-center sortable-list">
+
+                  <v-flex v-for="row in rows[0].items" :key="row.id" class="sortable" xs12 my-2 style="background: #fff">
+                    <p class=" text-center">{{ row.title }}</p>
+                    <!-- <v-card v-if="row.items.length === 0" color="dark" class="ma-10"> </v-card> -->
+                    <v-row align="center" justify="center">
+                      <!-- <draggable
+                        :list="row.items"
+                        tag="v-layout"
+                        :group="{ name: 'row' }"
+                        style="padding: 10px; display: inline-flex"
+                      >
+                        <v-card class="text-center" color="#00796b2e" style="display: flex; padding: 10px">
+                          <v-flex v-for="item in row.items" :key="item.title" pa-3 class="row-v">
+                            <v-card
+                              class="rounded-lg elevation-5 text-center"
+                              style="display: flex; padding: 10px; margin: auto"
+                            >
+                              <p style="margin: auto" class="overline">{{ item.title }}</p>
+                            </v-card>
+                          </v-flex>
+                        </v-card>
+                      </draggable> -->
+                    </v-row>
+                  </v-flex>
+                </draggable>
+              </v-col>
+              <!-- RIGHT CONTENT -->
+              <v-col cols="6" md="6">
+                <!-- <v-row align="center" justify="center">
+              <v-stepper v-model="e6" vertical width="1000" elevation="8" shaped outlined style="padding: 50px">
+                <draggable v-model="rows" tag="v-layout" class="row wrap fill-height align-center sortable-list">
+                  <v-flex v-for="row in rows" :key="row.index" class="sortable" xs12 my-2 style="background: #fff">
+                    <h1 class="overline text-center">{{ row.text }}</h1>
+                    <v-card v-if="row.items.length === 0" color="dark" class="ma-10"> </v-card>
+                    <v-row align="center" justify="center">
+                      <draggable
+                        :list="row.items"
+                        tag="v-layout"
+                        :group="{ name: 'row' }"
+                        style="padding: 10px; display: inline-flex"
+                      >
+                        <v-card class="text-center" color="#00796b2e" style="display: flex; padding: 10px">
+                          <v-flex v-for="item in row.items" :key="item.title" pa-3 class="row-v">
+                            <v-card
+                              class="rounded-lg elevation-5 text-center"
+                              style="display: flex; padding: 10px; margin: auto"
+                            >
+                              <p style="margin: auto" class="overline">{{ item.title }}</p>
+                            </v-card>
+                          </v-flex>
+                        </v-card>
+                      </draggable>
+                    </v-row>
+                  </v-flex>
+                </draggable>
+              </v-stepper>
+            </v-row> -->
+              </v-col>
+            </v-row>
+          </v-container>
         </v-tab-item>
       </v-tabs>
     </v-card>
