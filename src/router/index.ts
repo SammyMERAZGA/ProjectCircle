@@ -5,7 +5,7 @@ import Home from "@/views/Home/Home.vue";
 import Context from "@/views/Context/Context.vue";
 import Moe from "@/views/Moe/Moe.vue";
 import Moa from "@/views/Moa/Moa.vue";
-import Scrum from "@/views/Scrum/Scrum.vue";
+import Rh from "@/views/Rh/Rh.vue";
 import Unsuccessful from "@/views/Unsuccessful/Unsuccessful.vue";
 
 Vue.use(VueRouter);
@@ -37,9 +37,9 @@ const routes: Array<RouteConfig> = [
     component: Moa,
   },
   {
-    path: "/play/scrum",
-    name: "Scrum",
-    component: Scrum,
+    path: "/play/rh",
+    name: "Rh",
+    component: Rh,
   },
   {
     path: "/unsuccessful",
