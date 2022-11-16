@@ -1,181 +1,41 @@
 <template>
   <div>
-    <v-btn class="ma-5" color="teal" to="/home" fab dark small>
+    <v-btn class="ma-4" color="teal" to="/home" fab dark small>
       <v-icon>mdi-keyboard-return</v-icon>
     </v-btn>
     <h1 class="text-center black--text">Maîtrise d'ouvrage</h1>
     <v-row justify="center">
-      <v-img src="@/assets/management.png" max-width="250"></v-img>
+      <v-img class="mt-5 mb-12" src="@/assets/management.png" max-width="200"></v-img>
     </v-row>
-    <v-row justify="center" align="center">
+    <p class="text-center body mb-10 black--text">
+      À chaque bonne réponse, vous obtiendez un chiffre. Assemblez les chiffres
+      dans l'ordre du bon déroulement d'un projet afin de réussir ce jeu 🥳 !
+    </p>
+    <v-row class="mb-15" justify="center" align="center">
       <v-card class="elevation-10">
-        <v-tabs class="rounded-sm" fixed-tabs background-color="teal darken-2" dark>
+        <v-tabs
+          class="rounded-sm"
+          fixed-tabs
+          background-color="teal darken-2"
+          dark
+        >
           <v-tabs-slider color="cyan accent-1"></v-tabs-slider>
           <v-tab> Question 1 </v-tab>
           <v-tab-item>
             <h1 id="m-bottom" class="overline text-center grey--text">
               Question 1
             </h1>
-            <h1 class="overline mr-15 ml-15">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Obcaecati sapiente non quis eligendi illo asperiores ?
-            </h1>
-            <v-row class="mt-5" justify="center">
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="snackbarTrue = true"
-              >
-                Clôture
-              </v-btn>
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="removeLife()"
-              >
-                Lorem Ipsum
-              </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="removeLife()"
-              >
-                Lorem Ipsum
-              </v-btn>
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="removeLife()"
-              >
-                Lorem Ipsum
-              </v-btn>
-            </v-row>
-            <v-row class="ma-5" justify="end">
-              <h1 class="mr-2">{{ nbLives }}</h1>
-              <v-icon x-large color="red">mdi-heart</v-icon>
-            </v-row>
-          </v-tab-item>
-          <v-tab> Question 2 </v-tab>
-          <v-tab-item>
-            <h1 id="m-bottom" class="overline text-center grey--text">
-              Question 2
-            </h1>
-            <h1 class="overline mr-15 ml-15">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Obcaecati sapiente non quis eligendi illo asperiores ?
-            </h1>
+            <p class="mr-15 ml-15">
+              Quelle est la phase de projet où l'on réalise le produit et où
+              l'on recette ce dernier tout en ayant un suivi continu du chef de
+              projet ?
+            </p>
             <v-row class="mt-5" justify="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
                 color="teal darken-3"
                 @click="removeLife()"
-              >
-                Lorem Ipsum
-              </v-btn>
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="removeLife()"
-              >
-                Lorem Ipsum
-              </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="snackbarTrue = true"
-              >
-                Planification
-              </v-btn>
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="removeLife()"
-              >
-                Lorem Ipsum
-              </v-btn>
-            </v-row>
-            <v-row class="ma-5" justify="end">
-              <h1 class="mr-2">{{ nbLives }}</h1>
-              <v-icon x-large color="red">mdi-heart</v-icon>
-            </v-row>
-          </v-tab-item>
-          <v-tab> Question 3 </v-tab>
-          <v-tab-item>
-            <h1 id="m-bottom" class="overline text-center grey--text">
-              Question 3
-            </h1>
-            <h1 class="overline mr-15 ml-15">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Obcaecati sapiente non quis eligendi illo asperiores ?
-            </h1>
-            <v-row class="mt-5" justify="center">
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="removeLife()"
-              >
-                Lorem Ipsum
-              </v-btn>
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="removeLife()"
-              >
-                Lorem Ipsum
-              </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="removeLife()"
-              >
-                Lorem Ipsum
-              </v-btn>
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="snackbarTrue = true"
-              >
-                Production
-              </v-btn>
-            </v-row>
-            <v-row class="ma-5" justify="end">
-              <h1 class="mr-2">{{ nbLives }}</h1>
-              <v-icon x-large color="red">mdi-heart</v-icon>
-            </v-row>
-          </v-tab-item>
-          <v-tab> Question 4 </v-tab>
-          <v-tab-item>
-            <h1 id="m-bottom" class="overline text-center grey--text">
-              Question 4
-            </h1>
-            <h1 class="overline mr-15 ml-15">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Obcaecati sapiente non quis eligendi illo asperiores ?
-            </h1>
-            <v-row class="mt-5" justify="center">
-              <v-btn
-                class="ma-5 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="snackbarTrue = true"
               >
                 Cadrage
               </v-btn>
@@ -185,7 +45,109 @@
                 color="teal darken-3"
                 @click="removeLife()"
               >
-                Lorem Ipsum
+                Clôture
+              </v-btn>
+            </v-row>
+            <v-row class="mt-2" justify="center">
+              <v-btn
+                class="ma-5 ml-15 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="trueAnswerQ1()"
+              >
+                Production
+              </v-btn>
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="removeLife()"
+              >
+                Conception & planification
+              </v-btn>
+            </v-row>
+            <v-row class="ma-5" justify="end">
+              <h1 class="mr-2">{{ nbLives }}</h1>
+              <v-icon x-large color="red">mdi-heart</v-icon>
+            </v-row>
+          </v-tab-item>
+          <v-tab :disabled="disableQ2"> Question 2 </v-tab>
+          <v-tab-item>
+            <h1 id="m-bottom" class="overline text-center grey--text">
+              Question 2
+            </h1>
+            <p class="mr-15 ml-15">
+              Quelle est la phase de projet qui permet de définir les moyens,
+              d'effectuer une planification détaillé, d'affiner le budget et
+              spécifier de façon précise le produit ?
+            </p>
+            <v-row class="mt-5" justify="center">
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="removeLife()"
+              >
+                Cadrage
+              </v-btn>
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="removeLife()"
+              >
+                Production
+              </v-btn>
+            </v-row>
+            <v-row class="mt-2" justify="center">
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="trueAnswerQ2()"
+              >
+                Conception & Planification
+              </v-btn>
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="removeLife()"
+              >
+                Clôture
+              </v-btn>
+            </v-row>
+            <v-row class="ma-5" justify="end">
+              <h1 class="mr-2">{{ nbLives }}</h1>
+              <v-icon x-large color="red">mdi-heart</v-icon>
+            </v-row>
+          </v-tab-item>
+          <v-tab :disabled="disableQ3"> Question 3 </v-tab>
+          <v-tab-item>
+            <h1 id="m-bottom" class="overline text-center grey--text">
+              Question 3
+            </h1>
+            <p class="mr-15 ml-15">
+              Quelle est la phase de projet qui permet de définir le besoin et
+              les objectifs, d'effectuer une première analyse budgétaire et
+              d'introduire les ressources disponibles ?
+            </p>
+            <v-row class="mt-5" justify="center">
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="trueAnswerQ3()"
+              >
+                Cadrage
+              </v-btn>
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="removeLife()"
+              >
+                Clôture
               </v-btn>
             </v-row>
             <v-row class="mt-2" justify="center">
@@ -195,7 +157,7 @@
                 color="teal darken-3"
                 @click="removeLife()"
               >
-                Lorem Ipsum
+                Conception & Planification
               </v-btn>
               <v-btn
                 class="ma-5 rounded-lg"
@@ -203,12 +165,105 @@
                 color="teal darken-3"
                 @click="removeLife()"
               >
-                Lorem Ipsum
+                Production
               </v-btn>
             </v-row>
             <v-row class="ma-5" justify="end">
               <h1 class="mr-2">{{ nbLives }}</h1>
               <v-icon x-large color="red">mdi-heart</v-icon>
+            </v-row>
+          </v-tab-item>
+          <v-tab :disabled="disableQ4"> Question 4 </v-tab>
+          <v-tab-item>
+            <h1 id="m-bottom" class="overline text-center grey--text">
+              Question 4
+            </h1>
+            <p class="mr-15 ml-15">
+              Quelle est la phase de projet permettant de faire le bilan ainsi
+              que la capitalisation du travail effectué ?
+            </p>
+            <v-row class="mt-5" justify="center">
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="trueAnswerQ4()"
+              >
+                Clôture
+              </v-btn>
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="removeLife()"
+              >
+                Cadrage
+              </v-btn>
+            </v-row>
+            <v-row class="mt-2" justify="center">
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="removeLife()"
+              >
+                Production
+              </v-btn>
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="removeLife()"
+              >
+                Conception & Planification
+              </v-btn>
+            </v-row>
+            <v-row class="ma-5" justify="end">
+              <h1 class="mr-2">{{ nbLives }}</h1>
+              <v-icon x-large color="red">mdi-heart</v-icon>
+            </v-row>
+          </v-tab-item>
+          <v-tab :disabled="disableFinalEnigma"> Énigme finale </v-tab>
+          <v-tab-item>
+            <h1 id="m-bottom" class="overline text-center grey--text">
+              Énigme finale
+            </h1>
+            <h3 class="overline mr-15 mb-5 ml-15 text-center">
+              Bravo ! Vous avez répondu juste à toutes les questions 🚀
+            </h3>
+            <p class="mr-15 ml-15">
+              Parviendrez-vous maintenant à mettre les chiffres dans l'ordre du
+              bon déroulement d'un projet et ainsi réussir ce jeu ?
+            </p>
+            <v-row class="mt-10" justify="center" align="center">
+              <v-chip class="ma-2" color="teal accent-4" text-color="white">
+                1 - Production
+              </v-chip>
+              <v-chip class="ma-2" color="teal" text-color="white">
+                2 - Conception & Planification </v-chip
+              ><v-chip class="ma-2" color="teal darken-2" text-color="white">
+                3 - Cadrage
+              </v-chip>
+              <v-chip class="ma-2" color="teal darken-4" text-color="white">
+                4 - Clôture
+              </v-chip></v-row
+            >
+            <v-row class="ma-10" justify="center" align="center">
+              <v-otp-input
+                v-model="code"
+                color="teal"
+                length="4"
+                type="number"
+              ></v-otp-input>
+            </v-row>
+            <v-row class="ma-10" justify="center" align="center">
+              <v-btn
+                class="rounded-xl"
+                color="teal darken-3"
+                outlined
+                @click="checkCode(code)"
+                ><v-icon left> mdi-lock </v-icon>Valider le code</v-btn
+              >
             </v-row>
           </v-tab-item>
         </v-tabs>
@@ -238,6 +293,20 @@
           text
           v-bind="attrs"
           @click="snackbarFalse = false"
+        >
+          Fermer
+        </v-btn>
+      </template>
+    </v-snackbar>
+    <v-snackbar color="red darken-4" v-model="snackbarCodeFalse"
+      >Ce n'est pas le bon code ! Veuillez réessayer.
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          class="rounded-xl"
+          color="white"
+          text
+          v-bind="attrs"
+          @click="snackbarCodeFalse = false"
         >
           Fermer
         </v-btn>
