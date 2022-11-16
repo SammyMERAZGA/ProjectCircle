@@ -4,8 +4,8 @@ import { Component } from "vue-property-decorator";
 @Component
 export default class Context extends Vue {
     data = '';
-    dialogSuccessScrum = false;
-    dialogErrorScrum = false;
+    snackbarTrue = false;
+    snackbarFalse = false;
     errorScrum = this.$store.state.errorScrum;
     goodScrum = this.$store.state.goodScrum;
     role = ["Product Owner", "Scrum master", "Team member"];
@@ -25,39 +25,43 @@ export default class Context extends Vue {
         if (role == this.role[1]){
             if (data == this.data_table[0] || data == this.data_table[1]){
                 this.goodScrum = this.goodScrum + 1;
+                this.snackbarTrue = true;
             }
             else{
                 this.errorScrum = this.errorScrum + 1;
+                this.snackbarFalse = true;
             }
         }
         if (role == this.role[0]){
             if (data == this.data_table[2] || data == this.data_table[3]){
                 this.goodScrum = this.goodScrum + 1;
+                this.snackbarTrue = true;
             }
             else{
                 this.errorScrum = this.errorScrum + 1;
+                this.snackbarFalse = true;
             }
         }
         if (role == this.role[2]){
             if (data == this.data_table[4] || data == this.data_table[5]){
                 this.goodScrum = this.goodScrum + 1;
+                this.snackbarTrue = true;
             }
             else{
                 this.errorScrum = this.errorScrum + 1;
+                this.snackbarFalse = true;
             }
         }
 
-        if (this.errorScrum == 2){
-            this.dialogErrorScrum = true;
+        /*if (this.errorScrum == 0){
             this.goodScrum = 0;
             this.errorScrum = 0;
         }
 
         if (this.goodScrum == 1){
-            this.dialogSuccessScrum = true;
             this.goodScrum = 0;
             this.errorScrum = 0;
-        }
+        }*/
 
         this.getData();
     }
