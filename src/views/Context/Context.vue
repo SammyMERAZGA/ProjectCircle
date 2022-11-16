@@ -2,15 +2,7 @@
   <div>
     <h1 class="black--text text-center mt-10 mb-10">Contexte</h1>
     <v-row align="center" justify="center">
-      <iframe
-        id="video"
-        width="800"
-        height="500"
-        src="https://www.youtube.com/embed/FpP55xp2HxY"
-        title="YouTube video player"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
+      <v-img class="rounded-xl elevation-10" src="@/assets/gif/context.gif" max-width="950"/>
     </v-row>
     <h3 class="black--text text-center mt-10 mb-5">Lancer le jeu !</h3>
     <v-row class="mb-15" align="center" justify="center">
@@ -22,7 +14,7 @@
         x-large
         light
       >
-        <v-icon color="red darken-1">mdi-controller</v-icon>
+        <v-icon color="teal">mdi-controller</v-icon>
       </v-btn>
     </v-row>
   </div>

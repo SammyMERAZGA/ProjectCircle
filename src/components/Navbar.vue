@@ -2,7 +2,7 @@
   <v-app-bar
     v-if="$route.path !== '/' && $route.path !== '/context'"
     app
-    color="#53CDC5"
+    color="#00796B"
     flat
     height="40px"
   >
@@ -29,7 +29,7 @@
     <v-row align="center" justify="center">
       <h1 class="overline white--text">Project Nightmare</h1>
     </v-row>
-    <h3 class="white--text mr-2">3/3</h3>
+    <h3 class="white--text mr-2">{{ sanction }}/3</h3>
     <v-icon color="white">mdi-alert-circle-outline</v-icon>
   </v-app-bar>
 </template>
@@ -40,6 +40,7 @@ import Component from "vue-class-component";
 
 @Component
 export default class Navbar extends Vue {
+  sanction = this.$store.state.sanction;
   items = [
     {
       text: "Contexte",

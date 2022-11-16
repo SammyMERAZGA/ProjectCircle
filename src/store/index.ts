@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     errorScrum: 0,
     goodScrum: 0,
+    sanction: 0,
   },
   getters: {
   },

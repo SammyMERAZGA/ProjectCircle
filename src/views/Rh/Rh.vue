@@ -73,75 +73,63 @@
             </p>
             <v-layout justify-center>
               <v-btn
-                  class="rounded-lg elevation-5 ma-4"
-                  color="white"
+                  class="ma-5 rounded-lg"
+                  outlined
+                  color="teal darken-3"
                   @click="refreshData(data, role[0])"
-                  light
-                  depressed
               >{{ role[0] }}</v-btn>
               <v-btn
-                  class="rounded-lg elevation-5 ma-4"
-                  color="white"
+                  class="ma-5 rounded-lg"
+                  outlined
+                  color="teal darken-3"
                   @click="refreshData(data, role[1])"
-                  light
-                  depressed
               >{{ role[1] }}</v-btn>
               <v-btn
-                  class="rounded-lg  elevation-5 ma-4"
-                  color="white"
+                  class="ma-5 rounded-lg"
+                  outlined
+                  color="teal darken-3"
                   @click="refreshData(data, role[2])"
-                  light
-                  depressed
               >{{ role[2] }}</v-btn>
             </v-layout>
-            <p class="ml-15 mr-15">
-              Bonnes réponses d'affilés : {{ goodScrum }}
-            </p>
-            <p class="ml-15 mr-15">
-              Erreur : {{ errorScrum }}
-            </p>
+            <v-row class="ma-5" justify="end">
+              <h1 class="mr-2">{{ goodScrum }}</h1>
+              <v-icon x-large color="orange">mdi-fire</v-icon>
+              <h1 class="mr-2">{{ errorScrum }}</h1>
+              <v-icon x-large color="red">mdi-alert-circle-outline</v-icon>
+            </v-row>
           </v-container>
         </v-tab-item>
       </v-tabs>
     </v-card>
-    <v-dialog v-model="dialogSuccessScrum" width="500">
-      <v-card>
-        <v-card-title class="text-h5 grey lighten-2">Good</v-card-title>
-        <v-card-text class="mt-5">
-          Apprenez vos leçons ! Vous avez un nouvel avertissement <v-icon>mdi-alert-circle-outline</v-icon>
-          Attention, au bout de 3 avertissements vous serez viré.
-        </v-card-text>
-        <v-divider></v-divider>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" text to="/home">
-            C'est compris
-            <v-btn class="ma-2" text icon color="blue lighten-2">
-              <v-icon>mdi-thumb-up</v-icon>
-            </v-btn>
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-    <v-dialog v-model="dialogErrorScrum" width="500">
-      <v-card>
-        <v-card-title class="text-h5 grey lighten-2">Echec</v-card-title>
-        <v-card-text class="mt-5">
-          Apprenez vos leçons ! Vous avez un nouvel avertissement <v-icon>mdi-alert-circle-outline</v-icon>
-          Attention, au bout de 3 avertissements vous serez viré.
-        </v-card-text>
-        <v-divider></v-divider>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="dialogErrorScrum = false">
-            C'est compris
-            <v-btn class="ma-2" text icon color="blue lighten-2">
-              <v-icon>mdi-thumb-up</v-icon>
-            </v-btn>
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+    <!-- SNACKBAR -->
+    <v-snackbar color="green darken-3" v-model="snackbarTrue"
+    >Félicitations ! Vous avez trouvé la bonne réponse.
+      <template v-slot:action="{ attrs }">
+        <v-btn
+            class="rounded-xl"
+            color="white"
+            text
+            v-bind="attrs"
+            @click="snackbarTrue = false"
+        >
+          Fermer
+        </v-btn>
+      </template>
+    </v-snackbar>
+    <v-snackbar color="red darken-4" v-model="snackbarFalse"
+    >Aïe, ce n'est pas la bonne réponse. Vous prenez un avertissement !
+      <template v-slot:action="{ attrs }">
+        <v-btn
+            class="rounded-xl"
+            color="white"
+            text
+            v-bind="attrs"
+            @click="snackbarFalse = false"
+        >
+          Fermer
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
