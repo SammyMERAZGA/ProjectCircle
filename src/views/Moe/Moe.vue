@@ -55,7 +55,10 @@
             v-on="on"
             v-bind="attrs"
             color="teal darken-1"
-            @click="dialogPresentation = true"
+            @click="
+              dialogPresentation = true;
+              playSoundClick();
+            "
           >
             <v-icon dark> mdi-information-variant </v-icon>
           </v-btn>
@@ -131,13 +134,13 @@
             <p class="body-2 ml-5 mr-5">
               En voilà une bonne idée ! Utilisez git init, vous verrez que git a
               créé un dossier caché nommé .git qui enregistrera les informations
-              sur votre projet ainsi que vos fichiers. Il faut maintenant créer les branches pour
-              chaque développeur git branch nomDeMaBranche
+              sur votre projet ainsi que vos fichiers. Il faut maintenant créer
+              les branches pour chaque développeur git branch nomDeMaBranche
             </p>
             <p class="body-2 mb-5 ml-5 mr-5">
               et faire un git checkout nomDeMaBranche afin de se mettre sur la
-              branche en question. Maintenant, nous allons faire le premier commit
-              ! Quelle est la commande a utiliser selon vous ?
+              branche en question. Maintenant, nous allons faire le premier
+              commit ! Quelle est la commande a utiliser selon vous ?
             </p>
             <v-row align="center" justify="center" class="mb-2">
               <v-btn class="rounded-xl mr-2" @click="changeCard(4, true)">
@@ -302,16 +305,16 @@
     </v-snackbar>
     <!-- DIALOG GAME OVER -->
     <v-dialog
-        v-model="dialogSanction"
-        transition="dialog-top-transition"
-        max-width="600"
+      v-model="dialogSanction"
+      transition="dialog-top-transition"
+      max-width="600"
     >
       <v-card>
         <v-toolbar color="red darken-2" dark>
           <v-row align="center" justify="center">
             <v-toolbar-title
-            ><v-icon class="mr-2" color="white">mdi-alert</v-icon
-            >Sanction</v-toolbar-title
+              ><v-icon class="mr-2" color="white">mdi-alert</v-icon
+              >Sanction</v-toolbar-title
             >
           </v-row>
         </v-toolbar>
@@ -319,18 +322,19 @@
           <v-row align="center" justify="center">
             <v-img class="ma-5" src="@/assets/warning.png" max-width="300" />
             <p>
-              ⚠️ Attention, c'est ton troisième avertissement, tu as donc une sanction !
+              ⚠️ Attention, c'est ton troisième avertissement, tu as donc une
+              sanction !
             </p>
           </v-row>
           <v-row justify="end">
             <v-card-action class="justify-center mb-2">
               <v-spacer></v-spacer>
               <v-btn
-                  class="rounded-xl"
-                  text
-                  color="red darken-1"
-                  @click="dialogSanction = false"
-              >Fermer</v-btn
+                class="rounded-xl"
+                text
+                color="red darken-1"
+                @click="dialogSanction = false"
+                >Fermer</v-btn
               >
             </v-card-action>
           </v-row>

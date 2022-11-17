@@ -22,8 +22,7 @@
           max-height="400"
           v-for="t in thematic"
           :key="t.title"
-          :to="t.link"
-          :disabled="t.disable "
+          @click="playSoundAndGoToAGame(t.link)"
         >
           <v-img class="white--text align-end" height="250px" :src="t.image">
           </v-img>

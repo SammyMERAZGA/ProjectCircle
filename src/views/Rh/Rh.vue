@@ -52,7 +52,10 @@
             v-on="on"
             v-bind="attrs"
             color="teal darken-1"
-            @click="dialogPresentation = true"
+            @click="
+              dialogPresentation = true;
+              playSoundClick();
+            "
           >
             <v-icon dark> mdi-information-variant </v-icon>
           </v-btn>

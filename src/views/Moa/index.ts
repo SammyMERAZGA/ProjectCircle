@@ -1,5 +1,6 @@
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
+/* eslint-disable */
 
 @Component
 export default class Moa extends Vue {
@@ -28,6 +29,11 @@ export default class Moa extends Vue {
       this.$store.commit("checkGameOver");
       this.nbLives = 3;
     }
+  }
+
+  playSoundClick() {
+    var audio = new Audio(require("@/assets/clickButton.wav"));
+    audio.play();
   }
 
   goToHome() {
@@ -68,8 +74,7 @@ export default class Moa extends Vue {
         this.$store.state.sanction++;
         this.$store.commit("checkGameOver");
         this.nbLives = 3;
-      }
-      else{
+      } else {
         this.snackbarCodeFalse = true;
       }
     }
