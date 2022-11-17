@@ -92,7 +92,7 @@
                 </h4>
                 <p class="body-2 mb-5">
                   Au lancement du jeu, vous pourrez choisir par lequel des 4
-                  pôles de l’entreprise Aigrie Entreprise vous souhaitez
+                  pôles de l’entreprise vous souhaitez
                   commencer. Vous aurez le choix entre le pôle Marketing, le
                   pôle MOE, le pôle MOA ou bien le pôle Finance.
                 </p>

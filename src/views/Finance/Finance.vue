@@ -75,7 +75,8 @@
                 modèle économique d’une entreprise . Quel que soit votre secteur
                 d’activité ou la taille de votre marché, votre projet peut se
                 résumer en un tableau simple, accessible et compréhensible pour
-                tous. Le principe du BMC repose sur 9 blocs qui couvrent les 4
+                tous.<br><br>
+                Le principe du BMC repose sur 9 blocs qui couvrent les 4
                 dimensions fondamentales de quelconque (qui – quoi – comment –
                 combien). Les 9 blocs permettent de décrire, inventer, tester et
                 dessiner le modèle économique parfait.
@@ -84,7 +85,7 @@
                 gauche est consacrée à vos méthodes de travail (partenaires,
                 ressources, activités) tandis que la partie droite précise pour
                 qui vous créez de la valeur (quels clients, quelles relations,
-                quelle distribution). Enfin, la partie inférieure du tableau met
+                quelle distribution). <br><br> Enfin, la partie inférieure du tableau met
                 en avant votre structure de coûts et vos flux de revenus.
               </p>
             </v-row>

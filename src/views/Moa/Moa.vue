@@ -277,7 +277,7 @@
             </h3>
             <p class="mr-15 ml-15">
               Parviendrez-vous maintenant à mettre les chiffres dans l'ordre du
-              bon déroulement d'un projet et ainsi réussir ce jeu ?
+              bon déroulement d'un projet et ainsi aider le pôle MOA ?
             </p>
             <v-row class="mt-10" justify="center" align="center">
               <v-chip class="ma-2" color="teal accent-4" text-color="white">
