@@ -29,7 +29,8 @@
               class="rounded-md"
               outlined
               color="teal darken-3"
-              @click="dialogPresentation = false">
+              @click="dialogPresentation = false"
+            >
               Fermer
             </v-btn>
           </v-card-actions>
@@ -54,7 +55,10 @@
             v-on="on"
             v-bind="attrs"
             color="teal darken-1"
-            @click="dialogPresentation = true"
+            @click="
+              dialogPresentation = true;
+              playSoundClick();
+            "
           >
             <v-icon dark> mdi-information-variant </v-icon>
           </v-btn>
@@ -367,7 +371,10 @@
         </v-btn>
       </template>
     </v-snackbar>
-    <v-snackbar color="red darken-4" v-model="snackbarCodeFalse" :timeout="timeout"
+    <v-snackbar
+      color="red darken-4"
+      v-model="snackbarCodeFalse"
+      :timeout="timeout"
       >Ce n'est pas le bon code ! Veuillez réessayer.
       <template v-slot:action="{ attrs }">
         <v-btn
@@ -400,7 +407,8 @@
           <v-row align="center" justify="center">
             <v-img class="ma-5" src="@/assets/warning.png" max-width="300" />
             <p>
-              ⚠️ Attention, c'est ton troisième avertissement, tu as donc une sanction !
+              ⚠️ Attention, c'est ton troisième avertissement, tu as donc une
+              sanction !
             </p>
           </v-row>
           <v-row justify="end">

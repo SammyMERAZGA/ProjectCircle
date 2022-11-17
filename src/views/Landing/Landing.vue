@@ -29,11 +29,20 @@
         </v-row>
       </div>
       <v-row class="middle mb-15" align="center" justify="center">
-        <v-btn class="mt-10 mr-10 rounded-xl" color="white" to="/context" light>
+        <v-btn
+          class="mt-10 mr-10 rounded-xl"
+          color="white"
+          light
+          @click="playSoundClickAndGoTo()"
+        >
           <h3 class="overline black--text txt_right">Lancer le jeu</h3>
           <v-icon>mdi-controller</v-icon>
         </v-btn>
-        <v-dialog class="mb-15 non-scrollable" v-model="rulesDialog" max-width="600px">
+        <v-dialog
+          class="mb-15 non-scrollable"
+          v-model="rulesDialog"
+          max-width="600px"
+        >
           <template v-slot:activator="{ on, attrs }">
             <v-btn
               class="mt-10 rounded-xl"
@@ -41,6 +50,7 @@
               light
               v-bind="attrs"
               v-on="on"
+              @click="playSoundClick()"
             >
               <h3 class="overline black--text txt_right">Règles du jeu</h3>
               <v-icon>mdi-file-document-outline</v-icon>

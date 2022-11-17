@@ -5,7 +5,12 @@
     </v-btn>
     <h1 class="text-center black--text">Finance</h1>
     <!--  PRESENTATION DU JEU -->
-    <v-dialog v-model="dialogPresentation" transition="dialog-top-transition" max-width="800" persistent>
+    <v-dialog
+      v-model="dialogPresentation"
+      transition="dialog-top-transition"
+      max-width="800"
+      persistent
+    >
       <template @click.stop="dialogPresentation = false">
         <v-card class="rounded-lg" height="600">
           <v-toolbar color="teal darken-2" dark
@@ -45,7 +50,10 @@
             v-on="on"
             v-bind="attrs"
             color="teal darken-1"
-            @click="dialogPresentation = true"
+            @click="
+              dialogPresentation = true;
+              playSoundClick();
+            "
           >
             <v-icon dark> mdi-information-variant </v-icon>
           </v-btn>
@@ -123,7 +131,12 @@
                       style="display: flex"
                     >
                       <v-row align="center" justify="center">
-                        <v-btn class="ma-5 rounded-lg" outlined color="teal darken-3" @click="checkResult(tasks)">
+                        <v-btn
+                          class="ma-5 rounded-lg"
+                          outlined
+                          color="teal darken-3"
+                          @click="checkResult(tasks)"
+                        >
                           Vérifier le résultat
                         </v-btn>
                       </v-row>
@@ -141,78 +154,154 @@
                     group="tasks"
                   >
                     <div v-for="(task, i) in tasks.partenaires" :key="i">
-                      <v-card elevation="5" class="ma-5 pa-2 text-center rounded-xl" style="display: flex">
-                        <p style="margin: auto" class="overline">{{ task.title }}</p>
+                      <v-card
+                        elevation="5"
+                        class="ma-5 pa-2 text-center rounded-xl"
+                        style="display: flex"
+                      >
+                        <p style="margin: auto" class="overline">
+                          {{ task.title }}
+                        </p>
                       </v-card>
                     </div>
                   </draggable>
                 </div>
                 <div class="col mx-2 px-2 py-3 bg-light border rounded">
                   <h1 class="overline ma-5">Activités/Ressources clés ✍</h1>
-                  <draggable class="draggable-list" :list="tasks.activites" group="tasks">
+                  <draggable
+                    class="draggable-list"
+                    :list="tasks.activites"
+                    group="tasks"
+                  >
                     <div v-for="(task, i) in tasks.activites" :key="i">
-                      <v-card elevation="5" class="ma-5 pa-2 text-center rounded-xl" style="display: flex">
-                        <p style="margin: auto" class="overline">{{ task.title }}</p>
+                      <v-card
+                        elevation="5"
+                        class="ma-5 pa-2 text-center rounded-xl"
+                        style="display: flex"
+                      >
+                        <p style="margin: auto" class="overline">
+                          {{ task.title }}
+                        </p>
                       </v-card>
                     </div>
                   </draggable>
                 </div>
                 <div class="col mx-2 px-2 py-3 bg-light border rounded">
                   <h1 class="overline ma-5">Propositions de valeur ✅</h1>
-                  <draggable class="draggable-list" :list="tasks.propositions" group="tasks">
+                  <draggable
+                    class="draggable-list"
+                    :list="tasks.propositions"
+                    group="tasks"
+                  >
                     <div v-for="(task, i) in tasks.propositions" :key="i">
-                      <v-card elevation="5" class="ma-5 pa-2 text-center rounded-xl" style="display: flex">
-                        <p style="margin: auto" class="overline">{{ task.title }}</p>
+                      <v-card
+                        elevation="5"
+                        class="ma-5 pa-2 text-center rounded-xl"
+                        style="display: flex"
+                      >
+                        <p style="margin: auto" class="overline">
+                          {{ task.title }}
+                        </p>
                       </v-card>
                     </div>
                   </draggable>
                 </div>
                 <div class="col mx-2 px-2 py-3 bg-light border rounded">
                   <h1 class="overline ma-5">Canaux de distribution ✅</h1>
-                  <draggable class="draggable-list" :list="tasks.canaux" group="tasks">
+                  <draggable
+                    class="draggable-list"
+                    :list="tasks.canaux"
+                    group="tasks"
+                  >
                     <div v-for="(task, i) in tasks.canaux" :key="i">
-                      <v-card elevation="5" class="ma-5 pa-2 text-center rounded-xl" style="display: flex">
-                        <p style="margin: auto" class="overline">{{ task.title }}</p>
+                      <v-card
+                        elevation="5"
+                        class="ma-5 pa-2 text-center rounded-xl"
+                        style="display: flex"
+                      >
+                        <p style="margin: auto" class="overline">
+                          {{ task.title }}
+                        </p>
                       </v-card>
                     </div>
                   </draggable>
                 </div>
                 <div class="col mx-2 px-2 py-3 bg-light border rounded">
                   <h1 class="overline ma-5">Relation client ✅</h1>
-                  <draggable class="draggable-list" :list="tasks.relation" group="tasks">
+                  <draggable
+                    class="draggable-list"
+                    :list="tasks.relation"
+                    group="tasks"
+                  >
                     <div v-for="(task, i) in tasks.relation" :key="i">
-                      <v-card elevation="5" class="ma-5 pa-2 text-center rounded-xl" style="display: flex">
-                        <p style="margin: auto" class="overline">{{ task.title }}</p>
+                      <v-card
+                        elevation="5"
+                        class="ma-5 pa-2 text-center rounded-xl"
+                        style="display: flex"
+                      >
+                        <p style="margin: auto" class="overline">
+                          {{ task.title }}
+                        </p>
                       </v-card>
                     </div>
                   </draggable>
                 </div>
                 <div class="col mx-2 px-2 py-3 bg-light border rounded">
                   <h1 class="overline ma-5">Segment de clientèle ✅</h1>
-                  <draggable class="draggable-list" :list="tasks.segment" group="tasks">
+                  <draggable
+                    class="draggable-list"
+                    :list="tasks.segment"
+                    group="tasks"
+                  >
                     <div v-for="(task, i) in tasks.segment" :key="i">
-                      <v-card elevation="5" class="ma-5 pa-2 text-center rounded-xl" style="display: flex">
-                        <p style="margin: auto" class="overline">{{ task.title }}</p>
+                      <v-card
+                        elevation="5"
+                        class="ma-5 pa-2 text-center rounded-xl"
+                        style="display: flex"
+                      >
+                        <p style="margin: auto" class="overline">
+                          {{ task.title }}
+                        </p>
                       </v-card>
                     </div>
                   </draggable>
                 </div>
                 <div class="col mx-2 px-2 py-3 bg-light border rounded">
                   <h1 class="overline ma-5">Ressources ✅</h1>
-                  <draggable class="draggable-list" :list="tasks.ressource" group="tasks">
+                  <draggable
+                    class="draggable-list"
+                    :list="tasks.ressource"
+                    group="tasks"
+                  >
                     <div v-for="(task, i) in tasks.ressource" :key="i">
-                      <v-card elevation="5" class="ma-5 pa-2 text-center rounded-xl" style="display: flex">
-                        <p style="margin: auto" class="overline">{{ task.title }}</p>
+                      <v-card
+                        elevation="5"
+                        class="ma-5 pa-2 text-center rounded-xl"
+                        style="display: flex"
+                      >
+                        <p style="margin: auto" class="overline">
+                          {{ task.title }}
+                        </p>
                       </v-card>
                     </div>
                   </draggable>
                 </div>
                 <div class="col mx-2 px-2 py-3 bg-light border rounded">
                   <h1 class="overline ma-5">Structure des coûts ✅</h1>
-                  <draggable class="draggable-list" :list="tasks.structure" group="tasks">
+                  <draggable
+                    class="draggable-list"
+                    :list="tasks.structure"
+                    group="tasks"
+                  >
                     <div v-for="(task, i) in tasks.structure" :key="i">
-                      <v-card elevation="5" class="ma-5 pa-2 text-center rounded-xl" style="display: flex">
-                        <p style="margin: auto" class="overline">{{ task.title }}</p>
+                      <v-card
+                        elevation="5"
+                        class="ma-5 pa-2 text-center rounded-xl"
+                        style="display: flex"
+                      >
+                        <p style="margin: auto" class="overline">
+                          {{ task.title }}
+                        </p>
                       </v-card>
                     </div>
                   </draggable>
@@ -227,44 +316,79 @@
     <v-snackbar color="red darken-4" v-model="snackbarCodeFalse"
       >Aïe, ce n'est pas la bonne réponse. Vous prenez un avertissement !
       <template v-slot:action="{ attrs }">
-        <v-btn class="rounded-xl" color="white" text v-bind="attrs" @click="snackbarCodeFalse = false"> Fermer </v-btn>
+        <v-btn
+          class="rounded-xl"
+          color="white"
+          text
+          v-bind="attrs"
+          @click="snackbarCodeFalse = false"
+        >
+          Fermer
+        </v-btn>
       </template>
     </v-snackbar>
     <!-- DIALOG GAME OVER -->
-    <v-dialog v-model="dialogGameOver" transition="dialog-top-transition" max-width="600">
+    <v-dialog
+      v-model="dialogGameOver"
+      transition="dialog-top-transition"
+      max-width="600"
+    >
       <v-card>
         <v-toolbar color="red darken-2" dark>
           <v-row align="center" justify="center">
-            <v-toolbar-title><v-icon class="mr-2" color="white">mdi-alert</v-icon>Sanction</v-toolbar-title>
+            <v-toolbar-title
+              ><v-icon class="mr-2" color="white">mdi-alert</v-icon
+              >Sanction</v-toolbar-title
+            >
           </v-row>
         </v-toolbar>
         <v-card-text>
           <v-row align="center" justify="center">
             <v-img class="ma-5" src="@/assets/warning.png" max-width="300" />
-            <p>⚠️ Attention, c'est ta troisième erreur, tu as donc une sanction !</p>
+            <p>
+              ⚠️ Attention, c'est ta troisième erreur, tu as donc une sanction !
+            </p>
           </v-row>
           <v-row justify="end">
             <v-card-action class="justify-center mb-2">
               <v-spacer></v-spacer>
-              <v-btn class="rounded-xl" text color="red darken-1" @click="dialogGameOver = false">Fermer</v-btn>
+              <v-btn
+                class="rounded-xl"
+                text
+                color="red darken-1"
+                @click="dialogGameOver = false"
+                >Fermer</v-btn
+              >
             </v-card-action>
           </v-row>
         </v-card-text>
       </v-card>
     </v-dialog>
-    <v-dialog v-model="dialogVictory" transition="dialog-top-transition" max-width="800" persistent>
+    <v-dialog
+      v-model="dialogVictory"
+      transition="dialog-top-transition"
+      max-width="800"
+      persistent
+    >
       <template @click.stop="dialogVictory = false">
         <v-card class="rounded-lg" height="600">
           <v-toolbar color="teal darken-2" dark
             ><v-row align="center" justify="center"
               ><v-toolbar-title
-                ><v-icon class="mr-5" x-large color="white">mdi-trophy</v-icon>Victoire</v-toolbar-title
+                ><v-icon class="mr-5" x-large color="white">mdi-trophy</v-icon
+                >Victoire</v-toolbar-title
               ></v-row
             ></v-toolbar
           >
           <v-img class="rounded-lg ma-3" src="@/assets/gif/victory.gif" />
           <v-card-actions class="justify-center">
-            <v-btn class="rounded-md" outlined color="teal darken-3" @click="goToHome()">Fermer</v-btn>
+            <v-btn
+              class="rounded-md"
+              outlined
+              color="teal darken-3"
+              @click="goToHome()"
+              >Fermer</v-btn
+            >
           </v-card-actions>
         </v-card>
       </template>

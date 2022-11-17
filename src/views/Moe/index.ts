@@ -1,6 +1,8 @@
 import Vue from "vue";
 import draggable from "vuedraggable";
 import { Component } from "vue-property-decorator";
+/* eslint-disable */
+
 @Component({
   components: {
     draggable,
@@ -78,6 +80,11 @@ export default class Moe extends Vue {
 
   goToHome() {
     this.$router.push("/home");
+  }
+
+  playSoundClick() {
+    var audio = new Audio(require("@/assets/clickButton.wav"));
+    audio.play();
   }
 
   checkResult() {
