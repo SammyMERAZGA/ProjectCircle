@@ -25,6 +25,7 @@ export default class Moa extends Vue {
     if (this.nbLives === 0) {
       this.snackbarFalse = false;
       this.dialogGameOver = true;
+      this.$store.state.sanction++;
       setTimeout(() => {
         this.$router.push("/home");
       }, 3000);

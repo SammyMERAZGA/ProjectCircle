@@ -25,6 +25,10 @@ export default class Context extends Vue {
         this.data = this.data_table[Math.floor(Math.random() * this.data_table.length)]
     }
 
+    goToHome() {
+        this.$router.push("/home");
+    }
+
     refreshData(data : string, role : string): void {
         if (role == this.role[1]){
             if (data == this.data_table[0] || data == this.data_table[1]){
@@ -66,6 +70,7 @@ export default class Context extends Vue {
         }
 
         if (this.goodScrum == 4){
+            this.snackbarTrue = false;
             this.goodScrum = 0;
             this.errorScrum = 0;
             this.dialogSuccess = true;
