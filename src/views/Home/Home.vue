@@ -23,8 +23,9 @@
           v-for="t in thematic"
           :key="t.title"
           :to="t.link"
+          :disabled="t.disable "
         >
-          <v-img class="white--text align-end" height="250px" :src="t.image" v-if="!t.disable">
+          <v-img class="white--text align-end" height="250px" :src="t.image">
           </v-img>
         </v-card>
     </v-row>

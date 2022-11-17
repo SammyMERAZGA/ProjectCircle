@@ -148,7 +148,7 @@
                   </draggable>
                 </div>
                 <div class="col mx-2 px-2 py-3 bg-light border rounded">
-                  <h1 class="overline ma-5">Activités/Ressources clés ✍</h1>
+                  <h1 class="overline ma-5">Activités clés ✍</h1>
                   <draggable class="draggable-list" :list="tasks.activites" group="tasks">
                     <div v-for="(task, i) in tasks.activites" :key="i">
                       <v-card elevation="5" class="ma-5 pa-2 text-center rounded-xl" style="display: flex">
