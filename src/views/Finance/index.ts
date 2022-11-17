@@ -16,6 +16,9 @@ export default class Finance extends Vue {
     dialogSuccessScrum = false;
     dialogErrorScrum = false;
     nbLives = 3;
+    list1 = [{ name: "Drag Me!" }];
+    list2 = [{ name: "Drag Me Too!" }];
+
     rows = [
         {
             text: "Liste",
@@ -61,54 +64,55 @@ export default class Finance extends Vue {
                     title: "18/25 ans - Etudiants - Public en recherche d’alternance",
                     id: 9
                 }
-
-
-
             ]
         },
-        {
-            text: "Partenaire stratégique",
-            index: 2,
-            items: [
-
-            ]
-        },
-        {
-            text: "Activités/Ressources clés",
-            index: 3,
-            items: [
-            ]
-        },
-        {
-            text: "Propositions de valeur",
-            index: 4,
-            items: []
-        },
-        {
-            text: "Relation client/Canaux de distribution",
-            index: 5,
-            items: []
-        },
-        {
-            text: "Relation client",
-            index: 6,
-            items: []
-        },
-        {
-            text: "Segment de clientèle",
-            index: 7,
-            items: []
-        },
-        {
-            text: "Structure des coûts",
-            index: 8,
-            items: []
-        },
-        {
-            text: "Flux de revenus",
-            index: 9,
-            items: []
-        }
+    ]
+    rows2 = [{
+        text: "Liste",
+        index: 1,
+        items: [
+            {
+                text: "Partenaire stratégique",
+                index: 2,
+                items: []
+            },
+            {
+                text: "Activités/Ressources clés",
+                index: 3,
+                items: []
+            },
+            {
+                text: "Propositions de valeur",
+                index: 4,
+                items: []
+            },
+            {
+                text: "Relation client/Canaux de distribution",
+                index: 5,
+                items: []
+            },
+            {
+                text: "Relation client",
+                index: 6,
+                items: []
+            },
+            {
+                text: "Segment de clientèle",
+                index: 7,
+                items: []
+            },
+            {
+                text: "Structure des coûts",
+                index: 8,
+                items: []
+            },
+            {
+                text: "Flux de revenus",
+                index: 9,
+                items: []
+            }
+        ]
+    }
     ];
 
 }
