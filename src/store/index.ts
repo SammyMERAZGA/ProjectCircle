@@ -19,14 +19,18 @@ export default new Vuex.Store({
   },
   mutations: {
     checkGameOver(state): void {
-      if (state.sanction == 3){
+      if (state.sanction == 3) {
         state.sanction = 0;
         state.gameSuccess = 0;
+        state.moeOK = false;
+        state.moaOK = false;
+        state.rhOK = false;
+        state.financeOK = false;
         router.push("/unsuccessful");
       }
     },
     checkSuccess(state): void {
-      if (state.gameSuccess == 4){
+      if (state.gameSuccess == 4) {
         state.sanction = 0;
         state.gameSuccess = 0;
         router.push("/successful");
