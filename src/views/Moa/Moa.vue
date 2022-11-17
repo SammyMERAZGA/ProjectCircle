@@ -29,9 +29,9 @@
               class="rounded-md"
               outlined
               color="teal darken-3"
-              @click="dialogPresentation = false"
-              >Fermer</v-btn
-            >
+              @click="dialogPresentation = false">
+              Fermer
+            </v-btn>
           </v-card-actions>
         </v-card>
       </template>
@@ -64,7 +64,8 @@
     </v-row>
     <v-row class="mb-15" justify="center" align="center">
       <v-card class="elevation-10">
-        <v-tabs v-model="step"
+        <v-tabs
+          v-model="step"
           class="rounded-sm"
           fixed-tabs
           background-color="teal darken-2"
@@ -110,7 +111,10 @@
                 class="ma-5 rounded-lg"
                 outlined
                 color="teal darken-3"
-                @click="trueAnswerQ1(); step = 1"
+                @click="
+                  trueAnswerQ1();
+                  step = 1;
+                "
               >
                 Production
               </v-btn>
@@ -147,7 +151,10 @@
                 class="ma-5 rounded-lg"
                 outlined
                 color="teal darken-3"
-                @click="trueAnswerQ2(); step = 2"
+                @click="
+                  trueAnswerQ2();
+                  step = 2;
+                "
               >
                 Conception & Planification
               </v-btn>
@@ -176,7 +183,10 @@
                 class="ma-5 rounded-lg"
                 outlined
                 color="teal darken-3"
-                @click="trueAnswerQ3(); step = 3"
+                @click="
+                  trueAnswerQ3();
+                  step = 3;
+                "
               >
                 Cadrage
               </v-btn>
@@ -220,7 +230,10 @@
                 class="ma-5 rounded-lg"
                 outlined
                 color="teal darken-3"
-                @click="trueAnswerQ4(); step = 4"
+                @click="
+                  trueAnswerQ4();
+                  step = 4;
+                "
               >
                 Clôture
               </v-btn>
