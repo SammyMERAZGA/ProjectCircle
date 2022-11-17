@@ -7,10 +7,12 @@ import { Component } from "vue-property-decorator";
   },
 })
 export default class Moe extends Vue {
+  dialogPresentation = true;
   e6 = 1;
   snackbar = false;
   snackbarTrue = false;
   snackbarFalse = false;
+  timeout = 2000;
   game1 = true;
   display = "Functional third party";
   order = 17;
@@ -26,25 +28,17 @@ export default class Moe extends Vue {
       items: [
         {
           title: "Git init",
-          id: 1
+          id: 1,
         },
         {
           title: "git branch",
-          id: 2
+          id: 2,
         },
         {
           title: "git add",
-          id: 3
+          id: 3,
         },
-        {
-          title: "git push origin",
-          id: 5
-        },
-        {
-          title: "git merge",
-          id: 6
-        }
-      ]
+      ],
     },
     {
       text: "Liste à mettre dans l'ordre",
@@ -52,10 +46,18 @@ export default class Moe extends Vue {
       items: [
         {
           title: "git commit -m",
-          id: 4
+          id: 4,
+        },
+        {
+          title: "git push origin",
+          id: 5,
+        },
+        {
+          title: "git merge",
+          id: 6
         }
       ]
-    }
+    },
   ]
   computed(): void {
     console.log("object");
@@ -71,7 +73,7 @@ export default class Moe extends Vue {
       this.dialogSanction = true;
     }
   }
-  
+
   checkResult() {
     let itemsIdx = 1
     let error = false

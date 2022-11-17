@@ -1,8 +1,39 @@
 <template>
   <div>
-    <h1 class="black--text text-center mt-10 mb-10">Maîtrise d'oeuvre</h1>
+    <v-btn class="ma-4" color="teal" to="/home" fab dark small>
+      <v-icon>mdi-keyboard-return</v-icon>
+    </v-btn>
+    <h1 class="black--text text-center mb-7">Maîtrise d'oeuvre</h1>
+    <!-- DIALOG PRESENTATION DU JEU -->
+    <v-dialog
+      v-model="dialogPresentation"
+      transition="dialog-bottom-transition"
+      max-width="800"
+      persistent
+    >
+      <template @click.stop="dialogPresentation = false">
+        <v-card class="rounded-lg" height="600">
+          <v-toolbar color="teal darken-2" dark
+            ><v-row align="center" justify="center"
+              ><v-toolbar-title><v-icon x-large color="white">mdi-chat-question-outline</v-icon> Contexte et règles</v-toolbar-title></v-row
+            ></v-toolbar
+          >
+          <v-img class="rounded-lg ma-3" src="@/assets/gif/context.gif" />
+          <v-card-actions class="justify-center">
+            <v-btn
+              class="rounded-md"
+              outlined
+              color="teal darken-3"
+              @click="dialogPresentation = false"
+              >Fermer</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </template>
+    </v-dialog>
+    <!-- END DIALOG -->
     <v-row justify="center">
-      <v-img src="@/assets/moe-icon.png" class="mb-10" max-width="250"></v-img>
+      <v-img class="mb-12" src="@/assets/development.png" max-width="193" height="200"></v-img>
     </v-row>
     <v-row align="center" justify="center" v-if="game1">
       <Transition>
@@ -104,11 +135,14 @@
       </Transition>
     </v-row>
 
-    <v-row align="center" justify="center" v-else>
+    <v-row class="mb-15" align="center" justify="center" v-else>
       <v-stepper v-model="e6" vertical width="1000" elevation="8" shaped outlined style="padding: 50px">
+        <h1 class="overline text-center mb-15">Mettez la liste dans l'odre des cycles git !</h1>
         <draggable v-model="rows" tag="v-layout" class="row wrap fill-height align-center sortable-list">
           <v-flex v-for="row in rows" :key="row.index" class="sortable" xs12 my-2 style="background: #fff">
-            <h1 class="overline text-center" v-if="row.items.length >= 1">{{ row.text }}</h1>
+            <h1 class="overline text-center" v-if="row.items.length >= 1">
+              {{ row.text }}
+            </h1>
             <v-row align="center" justify="center">
               <draggable
                 :list="row.items"
@@ -121,48 +155,53 @@
                     class="rounded-lg elevation-5 text-center"
                     style="height: 60px; width: 145px; display: flex; padding: 10px"
                   >
-                    <p style="margin: auto" class="overline">{{ item.title }}</p>
+                    <p style="margin: auto" class="overline">
+                      {{ item.title }}
+                    </p>
                   </v-card>
                 </v-flex>
               </draggable>
             </v-row>
           </v-flex>
         </draggable>
-
         <v-row align="center" justify="center">
           <v-btn class="ma-5 rounded-lg" outlined color="teal darken-3" @click="checkResult()">
             Vérifier le résultat
           </v-btn>
         </v-row>
-        <v-row class="ma-5" justify="end">
-          <h1 class="mr-2">{{ nbLives }}</h1>
-          <v-icon x-large color="red">mdi-heart</v-icon>
-        </v-row>
       </v-stepper>
     </v-row>
 
-    <!-- SNACKBAR -->
-    <v-snackbar color="green darken-3" v-model="snackbarTrue"
-      >Félicitations ! Vous avez trouvé la bonne réponse.
-      <template v-slot:action="{ attrs }">
-        <v-btn class="rounded-xl" color="white" text v-bind="attrs" @click="snackbarTrue = false"> Fermer </v-btn>
-      </template>
+    <v-snackbar v-model="snackbar" right color="success" align="center" min-width>
+      Bonne réponse <v-icon> mdi-thumb-up </v-icon>
     </v-snackbar>
-    <v-snackbar color="red darken-4" v-model="snackbarFalse"
+    <v-snackbar color="red darken-4" v-model="snackbarFalse" :timeout="timeout"
       >Aïe, ce n'est pas la bonne réponse. Vous prenez un avertissement !
       <template v-slot:action="{ attrs }">
-        <v-btn class="rounded-xl" color="white" text v-bind="attrs" @click="snackbarFalse = false"> Fermer </v-btn>
+        <v-btn
+          class="rounded-xl"
+          color="white"
+          text
+          v-bind="attrs"
+          @click="snackbarFalse = false"
+        >
+          Fermer
+        </v-btn>
       </template>
     </v-snackbar>
     <!-- DIALOG GAME OVER -->
-    <v-dialog v-model="dialogSanction" persistent transition="dialog-top-transition" max-width="600">
+    <v-dialog
+      v-model="dialogSanction"
+      persistent
+      transition="dialog-top-transition"
+      max-width="600"
+    >
       <v-card>
-        <v-toolbar color="red darken-2" dark></v-toolbar>
-        <v-card-text>
-          <v-row align="center" justify="center">
-            <div class="text-h2 pa-12">Aie !</div>
-            <p class="text-center">Vous prennez une sanction, retournez apprendre vos leçons !</p>
-          </v-row>
+        <v-card-title class="text-h5 grey lighten-2">Echec</v-card-title>
+        <v-card-text class="mt-5">
+          Apprenez vos leçons ! Vous avez un nouvel avertissement
+          <v-icon>mdi-alert-circle-outline</v-icon>
+          Attention, au bout de 3 avertissements vous serez viré.
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -171,13 +210,18 @@
       </v-card>
     </v-dialog>
     <!-- DIALOG GAME SUCCESS -->
-    <v-dialog v-model="dialogSuccess" persistent transition="dialog-top-transition" max-width="600">
+    <v-dialog
+      v-model="dialogSuccess"
+      persistent
+      transition="dialog-top-transition"
+      max-width="600"
+    >
       <v-card>
         <v-toolbar color="#00796b" dark></v-toolbar>
         <v-card-text>
           <v-row align="center" justify="center">
             <div class="text-h2 pa-12">Bravo</div>
-            <p class="text-center">Vous avez réussi le mini jeu ! </p>
+            <p class="text-center">Vous avez réussi le mini jeu !</p>
           </v-row>
         </v-card-text>
         <v-card-actions>

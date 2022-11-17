@@ -12,26 +12,37 @@
       <li></li>
       <li></li>
     </ul>
+    <img id="logo" src="@/assets/blackLogo.png" />
     <v-container>
       <div class="parent">
-        <img id="logo" src="@/assets/blackLogo.png" />
         <v-row align="center" justify="center">
-          <v-img id="image" src="@/assets/gaming.png" max-width="500" height="500"></v-img>
+          <v-img
+            id="image"
+            src="@/assets/gaming.png"
+            max-width="500"
+            height="500"
+          ></v-img>
         </v-row>
       </div>
       <v-row class="middle" align="center" justify="center">
         <v-btn class="mt-10 mr-10 rounded-xl" color="white" to="/context" light>
-          <h3 class="black--text txt_right">Lancer le jeu</h3>
+          <h3 class="overline black--text txt_right">Lancer le jeu</h3>
           <v-icon>mdi-controller</v-icon>
         </v-btn>
-        <v-dialog class="mb-15" v-model="rulesDialog" max-width="600px">
+        <v-dialog class="mb-15 non-scrollable" v-model="rulesDialog" max-width="600px">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn class="mt-10 rounded-xl" color="white" light v-bind="attrs" v-on="on">
-              <h3 class="black--text txt_right">Règles du jeu</h3>
+            <v-btn
+              class="mt-10 rounded-xl"
+              color="white"
+              light
+              v-bind="attrs"
+              v-on="on"
+            >
+              <h3 class="overline black--text txt_right">Règles du jeu</h3>
               <v-icon>mdi-file-document-outline</v-icon>
             </v-btn>
           </template>
-          <v-card class="rounded-xl hide-scrollbar">
+          <v-card class="hide-scrollbar">
             <v-toolbar id="toolbar" class="mb-5" dark color="teal darken-2">
               <v-row align="center" justify="center">
                 <v-toolbar-title>
@@ -44,7 +55,12 @@
             <v-card-text>
               <v-container>
                 <v-row align="center" justify="center">
-                  <v-img class="mb-5" src="@/assets/rules.png" height="300px" max-width="300"></v-img>
+                  <v-img
+                    class="mb-5"
+                    src="@/assets/rules.png"
+                    height="300px"
+                    max-width="300"
+                  ></v-img>
                 </v-row>
                 <v-divider></v-divider>
                 <h4 class="overline text-decoration-underline mt-10 mb-3">
@@ -97,7 +113,12 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn class="rounded-xl" color="red darken-1" text @click="rulesDialog = false">
+              <v-btn
+                class="rounded-xl"
+                color="red darken-1"
+                text
+                @click="rulesDialog = false"
+              >
                 Fermer
               </v-btn>
             </v-card-actions>
@@ -109,6 +130,4 @@
 </template>
 
 <script lang="ts" src="./index.ts"></script>
-<style scoped src="./style.css">
-
-</style>
+<style scoped src="./style.css"></style>
