@@ -28,16 +28,20 @@ export default class Moe extends Vue {
       index: 1,
       items: [
         {
+          title: "git commit -m",
+          id: 4,
+        },
+        {
           title: "Git init",
           id: 1,
         },
         {
-          title: "git branch",
-          id: 2,
-        },
-        {
           title: "git add",
           id: 3,
+        },
+        {
+          title: "git branch",
+          id: 2,
         },
       ],
     },
@@ -45,10 +49,6 @@ export default class Moe extends Vue {
       text: "Liste à mettre dans l'ordre",
       index: 2,
       items: [
-        {
-          title: "git commit -m",
-          id: 4,
-        },
         {
           title: "git push origin",
           id: 5,
@@ -90,12 +90,13 @@ export default class Moe extends Vue {
     let itemsIdx = 1
     let error = false
     for (let i = 0; i < this.rows[1].items.length; i++) {
+      console.log(this.rows[1].items[i].id);
       if (this.rows[1].items[i].id !== itemsIdx) {
         error = true
       }
       itemsIdx++
     }
-    if (error && this.nbLives > 0) {
+    if (error && this.nbLives > 0) {  
       this.snackbarFalse = false
       this.removeLife()
     } else {
