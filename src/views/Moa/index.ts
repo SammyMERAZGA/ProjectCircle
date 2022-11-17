@@ -59,6 +59,7 @@ export default class Moa extends Vue {
       this.dialogVictory = true;
       this.$store.state.gameSuccess++;
       this.$store.state.moaOK = true;
+      this.$store.commit("checkSuccess");
     } else {
       this.nbLives--;
       if (this.nbLives === 0) {

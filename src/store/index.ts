@@ -21,7 +21,15 @@ export default new Vuex.Store({
     checkGameOver(state): void {
       if (state.sanction == 3){
         state.sanction = 0;
+        state.gameSuccess = 0;
         router.push("/unsuccessful");
+      }
+    },
+    checkSuccess(state): void {
+      if (state.gameSuccess == 4){
+        state.sanction = 0;
+        state.gameSuccess = 0;
+        router.push("/successful");
       }
     }
   },

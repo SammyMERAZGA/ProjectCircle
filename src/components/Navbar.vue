@@ -1,6 +1,6 @@
 <template>
   <v-app-bar
-    v-if="$route.path !== '/' && $route.path !== '/context'"
+    v-if="$route.path !== '/' && $route.path !== '/context' && $route.path !== '/successful' && $route.path !== '/unsuccessful'"
     app
     color="#00796B"
     flat
