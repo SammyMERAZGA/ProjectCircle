@@ -57,6 +57,7 @@ export default class Moa extends Vue {
   checkCode(code: string) {
     if (code === "3214") {
       this.dialogVictory = true;
+      this.$store.state.gameSuccess++;
       this.$store.state.moaOK = true;
     } else {
       this.nbLives--;

@@ -95,6 +95,7 @@ export default class Moe extends Vue {
     } else {
       this.dialogSuccess = true
       this.$store.state.moeOK = true;
+      this.$store.state.gameSuccess++;
     }
   }
   changeCard(numCard: number, valide: boolean) {

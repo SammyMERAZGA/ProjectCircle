@@ -9,6 +9,7 @@ export default new Vuex.Store({
     errorScrum: 0,
     goodScrum: 0,
     sanction: 0,
+    gameSuccess: 0,
     moeOK: false,
     moaOK: false,
     rhOK: false,

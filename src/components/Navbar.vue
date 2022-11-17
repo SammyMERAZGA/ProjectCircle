@@ -29,6 +29,21 @@
     <v-row align="center" justify="center">
       <h1 class="overline white--text">Project Nightmare</h1>
     </v-row>
+    <h3 class="white--text mr-2">{{ this.$store.state.gameSuccess }}/4</h3>
+    <v-tooltip color="teal darken-3" bottom>
+      <template v-slot:activator="{ on, attrs }">
+        <v-icon
+            dark
+            v-bind="attrs"
+            v-on="on"
+            color="white"
+            class="mr-4"
+        >
+          mdi-controller
+        </v-icon>
+      </template>
+      <span>Jeux réussis</span>
+    </v-tooltip>
     <h3 class="white--text mr-2">{{ this.$store.state.sanction }}/3</h3>
     <v-tooltip color="teal darken-3" bottom>
       <template v-slot:activator="{ on, attrs }">
