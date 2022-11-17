@@ -16,7 +16,6 @@ export default class Moe extends Vue {
   game1 = true;
   display = "Functional third party";
   order = 17;
-
   dialogSanction = false;
   dialogSuccess = false
   nbLives = 3;
@@ -96,6 +95,7 @@ export default class Moe extends Vue {
       this.dialogSuccess = true
       this.$store.state.moeOK = true;
       this.$store.state.gameSuccess++;
+      this.$store.commit("checkSuccess");
     }
   }
   changeCard(numCard: number, valide: boolean) {

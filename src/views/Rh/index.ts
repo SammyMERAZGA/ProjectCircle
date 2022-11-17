@@ -79,6 +79,7 @@ export default class Context extends Vue {
             this.dialogSuccess = true;
             this.$store.state.gameSuccess++;
             this.$store.state.rhOK = true;
+            this.$store.commit("checkSuccess");
         }
 
         this.getData();
