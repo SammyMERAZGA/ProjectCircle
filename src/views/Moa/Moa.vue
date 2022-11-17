@@ -6,26 +6,31 @@
     <h1 class="text-center black--text">Maîtrise d'ouvrage</h1>
     <!-- DIALOG PRESENTATION DU JEU -->
     <v-dialog
-        v-model="dialogPresentation"
-        transition="dialog-top-transition"
-        max-width="800"
-        persistent
+      v-model="dialogPresentation"
+      transition="dialog-top-transition"
+      max-width="800"
+      persistent
     >
       <template @click.stop="dialogPresentation = false">
         <v-card class="rounded-lg" height="600">
           <v-toolbar color="teal darken-2" dark
-          ><v-row align="center" justify="center"
-          ><v-toolbar-title><v-icon x-large color="white">mdi-chat-question-outline</v-icon> Contexte et règles</v-toolbar-title></v-row
-          ></v-toolbar
+            ><v-row align="center" justify="center"
+              ><v-toolbar-title
+                ><v-icon x-large color="white"
+                  >mdi-chat-question-outline</v-icon
+                >
+                Contexte et règles</v-toolbar-title
+              ></v-row
+            ></v-toolbar
           >
           <v-img class="rounded-lg ma-3" src="@/assets/gif/context.gif" />
           <v-card-actions class="justify-center">
             <v-btn
-                class="rounded-md"
-                outlined
-                color="teal darken-3"
-                @click="dialogPresentation = false"
-            >Fermer</v-btn
+              class="rounded-md"
+              outlined
+              color="teal darken-3"
+              @click="dialogPresentation = false"
+              >Fermer</v-btn
             >
           </v-card-actions>
         </v-card>
@@ -58,7 +63,7 @@
               l'on recette ce dernier tout en ayant un suivi continu du chef de
               projet ?
             </p>
-            <v-row class="mt-5" justify="center">
+            <v-row class="mt-5" justify="center" align="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
@@ -75,16 +80,6 @@
               >
                 Clôture
               </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
-              <v-btn
-                class="ma-5 ml-15 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="trueAnswerQ1()"
-              >
-                Production
-              </v-btn>
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
@@ -92,6 +87,14 @@
                 @click="removeLife()"
               >
                 Conception & planification
+              </v-btn>
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="trueAnswerQ1()"
+              >
+                Production
               </v-btn>
             </v-row>
             <v-row class="ma-5" justify="end">
@@ -109,7 +112,7 @@
               d'effectuer une planification détaillé, d'affiner le budget et
               spécifier de façon précise le produit ?
             </p>
-            <v-row class="mt-5" justify="center">
+            <v-row class="mt-5" justify="center" align="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
@@ -126,8 +129,6 @@
               >
                 Production
               </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
@@ -177,8 +178,6 @@
               >
                 Clôture
               </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
@@ -227,8 +226,6 @@
               >
                 Cadrage
               </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
@@ -297,6 +294,35 @@
         </v-tabs>
       </v-card>
     </v-row>
+    <v-dialog
+      v-model="dialogVictory"
+      transition="dialog-top-transition"
+      max-width="800"
+      persistent
+    >
+      <template @click.stop="dialogVictory = false">
+        <v-card class="rounded-lg" height="600">
+          <v-toolbar color="teal darken-2" dark
+            ><v-row align="center" justify="center"
+              ><v-toolbar-title
+                ><v-icon class="mr-5" x-large color="white">mdi-trophy</v-icon
+                >Victoire</v-toolbar-title
+              ></v-row
+            ></v-toolbar
+          >
+          <v-img class="rounded-lg ma-3" src="@/assets/gif/victory.gif" />
+          <v-card-actions class="justify-center">
+            <v-btn
+              class="rounded-md"
+              outlined
+              color="teal darken-3"
+              @click="dialogVictory = false"
+              >Fermer</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </template>
+    </v-dialog>
     <!-- SNACKBAR -->
     <v-snackbar color="green darken-3" v-model="snackbarTrue"
       >Félicitations ! Vous avez trouvé la bonne réponse.
