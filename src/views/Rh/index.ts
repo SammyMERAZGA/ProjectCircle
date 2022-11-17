@@ -80,6 +80,7 @@ export default class Context extends Vue {
       this.errorScrum = 0;
       this.dialogSuccess = true;
       this.$store.state.rhOK = true;
+      this.$store.commit("checkSuccess");
     }
 
     this.getData();
