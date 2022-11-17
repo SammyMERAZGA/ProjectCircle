@@ -38,6 +38,7 @@ export default class Context extends Vue {
             else{
                 this.errorScrum++;
                 this.snackbarFalse = true;
+                this.goodScrum = 0;
             }
         }
         if (role == this.role[0]){
@@ -48,6 +49,7 @@ export default class Context extends Vue {
             else{
                 this.errorScrum++;
                 this.snackbarFalse = true;
+                this.goodScrum = 0;
             }
         }
         if (role == this.role[2]){
@@ -58,6 +60,7 @@ export default class Context extends Vue {
             else{
                 this.errorScrum++;
                 this.snackbarFalse = true;
+                this.goodScrum = 0;
             }
         }
 
@@ -74,6 +77,7 @@ export default class Context extends Vue {
             this.goodScrum = 0;
             this.errorScrum = 0;
             this.dialogSuccess = true;
+            this.$store.state.gameSuccess++;
             this.$store.state.rhOK = true;
         }
 

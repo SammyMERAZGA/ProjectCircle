@@ -74,8 +74,8 @@ export default class Finance extends Vue {
 
     checkResult(tasks: any) {
         if (tasks.partenaires[0].id === 1 && tasks.canaux[0].id === 2 && tasks.propositions[0].id === 3 && tasks.activites[0].id === 4 && tasks.relation[0].id === 5 && tasks.structure[0].id === 6 && tasks.ressource[0].id === 7 && tasks.segment[0].id === 8) {
-            console.log("lets go");
             this.dialogVictory = true;
+            this.$store.state.gameSuccess++;
         } else {
             this.removeLife()
         }
