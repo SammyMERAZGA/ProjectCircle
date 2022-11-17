@@ -30,7 +30,19 @@
       <h1 class="overline white--text">Project Nightmare</h1>
     </v-row>
     <h3 class="white--text mr-2">{{ this.$store.state.sanction }}/3</h3>
-    <v-icon color="white">mdi-alert-circle-outline</v-icon>
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on, attrs }">
+        <v-icon
+            dark
+            v-bind="attrs"
+            v-on="on"
+            color="white"
+        >
+          mdi-emoticon-angry
+        </v-icon>
+      </template>
+      <span>Sanction</span>
+    </v-tooltip>
   </v-app-bar>
 </template>
 
