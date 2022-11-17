@@ -5,6 +5,7 @@ import { Component } from "vue-property-decorator";
 @Component
 export default class Context extends Vue {
   data = "";
+  dataTest = "";
   snackbarTrue = false;
   snackbarFalse = false;
   timeout = 2000;
@@ -23,9 +24,11 @@ export default class Context extends Vue {
     "Doit respecter les besoins métiers",
   ];
 
-  getData(): void {
-    this.data =
-      this.data_table[Math.floor(Math.random() * this.data_table.length)];
+  getData(dataTest: string): void {
+    this.data = this.data_table[Math.floor(Math.random() * this.data_table.length)];
+    if (dataTest == this.data){
+      this.getData(this.data);
+    }
   }
 
   goToHome() {
@@ -79,9 +82,11 @@ export default class Context extends Vue {
       this.goodScrum = 0;
       this.errorScrum = 0;
       this.dialogSuccess = true;
+      this.$store.state.gameSuccess++;
       this.$store.state.rhOK = true;
+      this.$store.commit("checkSuccess");
     }
 
-    this.getData();
+    this.getData(this.data);
   }
 }

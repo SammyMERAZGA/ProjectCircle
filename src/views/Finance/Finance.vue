@@ -67,27 +67,32 @@
         <v-tab-item>
           <v-container fluid>
             <v-row>
-              <h4 class="overline text-decoration-underline mt-3 mb-3 ml-15">
-                Business Model Canvas
-              </h4>
-              <p class="body-2 mb-10 ml-15 mr-15">
-                Le Business Model Canvas permet de construire et résumer le
-                modèle économique d’une entreprise . Quel que soit votre secteur
-                d’activité ou la taille de votre marché, votre projet peut se
-                résumer en un tableau simple, accessible et compréhensible pour
-                tous.<br><br>
-                Le principe du BMC repose sur 9 blocs qui couvrent les 4
-                dimensions fondamentales de quelconque (qui – quoi – comment –
-                combien). Les 9 blocs permettent de décrire, inventer, tester et
-                dessiner le modèle économique parfait.
-                <br /><br />
-                Au centre se trouve votre proposition de valeur. La partie
-                gauche est consacrée à vos méthodes de travail (partenaires,
-                ressources, activités) tandis que la partie droite précise pour
-                qui vous créez de la valeur (quels clients, quelles relations,
-                quelle distribution). <br><br> Enfin, la partie inférieure du tableau met
-                en avant votre structure de coûts et vos flux de revenus.
-              </p>
+              <v-col md="3">
+                <v-img src="@/assets/FINANCE-WOMEN.png" max-width="175" class="mt-5 ml-7"></v-img>
+              </v-col>
+              <v-col md="8">
+                <h4 class="overline text-decoration-underline mt-3 mb-3">
+                  Business Model Canvas
+                </h4>
+                <p class="body-2 mb-10 mr-15">
+                  Le Business Model Canvas permet de construire et résumer le
+                  modèle économique d’une entreprise . Quel que soit votre secteur
+                  d’activité ou la taille de votre marché, votre projet peut se
+                  résumer en un tableau simple, accessible et compréhensible pour
+                  tous.<br><br>
+                  Le principe du BMC repose sur 9 blocs qui couvrent les 4
+                  dimensions fondamentales de quelconque (qui – quoi – comment –
+                  combien). Les 9 blocs permettent de décrire, inventer, tester et
+                  dessiner le modèle économique parfait.
+                  <br /><br />
+                  Au centre se trouve votre proposition de valeur. La partie
+                  gauche est consacrée à vos méthodes de travail (partenaires,
+                  ressources, activités) tandis que la partie droite précise pour
+                  qui vous créez de la valeur (quels clients, quelles relations,
+                  quelle distribution).Enfin, la partie inférieure du tableau met
+                  en avant votre structure de coûts et vos flux de revenus.
+                </p>
+              </v-col>
             </v-row>
           </v-container>
         </v-tab-item>
