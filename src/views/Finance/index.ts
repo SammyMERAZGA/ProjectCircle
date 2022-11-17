@@ -16,103 +16,55 @@ export default class Finance extends Vue {
     dialogSuccessScrum = false;
     dialogErrorScrum = false;
     nbLives = 3;
-    list1 = [{ name: "Drag Me!" }];
-    list2 = [{ name: "Drag Me Too!" }];
-
-    rows = [
-        {
-            text: "Liste",
-            index: 1,
-            items: [
-                {
-                    title: "Entreprises" +
-                        " - Sites d’aide " +
-                        " - Journaux" +
-                        " - Ecoles" +
-                        " - Facultés",
-                    id: 2
-                },
-                {
-                    title: "Internet - Instagram - TikTok - LinkedIn",
-                    id: 3
-                },
-                {
-                    title: "Proposer du contenu interactif - " +
-                        "Aider à savoir bien postuler à une offre d’emploi",
-                    id: 4
-                },
-                {
-                    title: "Fournir un modèle de curriculum vitae" +
-                        " - Créer des articles" +
-                        " - Créer du contenu vidéo",
-                    id: 5
-                },
-                {
-                    title: "Entraide - Bienveillance - Conseil",
-                    id: 6
-                },
-                {
-                    title: "Internet - Instagram - TikTok - LinkedIn",
-                    id: 7
-                },
-                {
-                    title: "Ordinateurs, écrans - Hébergeur - Serveur " +
-                        "- Licence et outils de développement et de gestion de base de données ",
-                    id: 8
-                },
-                {
-                    title: "18/25 ans - Etudiants - Public en recherche d’alternance",
-                    id: 9
-                }
-            ]
+    tasks = {
+        ideas: [{
+            title: "Entreprises - Sites d’aide " +
+                " - Journaux - Ecoles / Facultés",
+            id: 1
         },
-    ]
-    rows2 = [{
-        text: "Liste",
-        index: 1,
-        items: [
-            {
-                text: "Partenaire stratégique",
-                index: 2,
-                items: []
-            },
-            {
-                text: "Activités/Ressources clés",
-                index: 3,
-                items: []
-            },
-            {
-                text: "Propositions de valeur",
-                index: 4,
-                items: []
-            },
-            {
-                text: "Relation client/Canaux de distribution",
-                index: 5,
-                items: []
-            },
-            {
-                text: "Relation client",
-                index: 6,
-                items: []
-            },
-            {
-                text: "Segment de clientèle",
-                index: 7,
-                items: []
-            },
-            {
-                text: "Structure des coûts",
-                index: 8,
-                items: []
-            },
-            {
-                text: "Flux de revenus",
-                index: 9,
-                items: []
-            }
-        ]
+        {
+            title: "Internet - Instagram - TikTok - LinkedIn",
+            id: 2
+        },
+        {
+            title: "Proposer du contenu interactif - " +
+                "Aider à savoir bien postuler à une offre d’emploi",
+            id: 3
+        },
+        {
+            title: "Fournir un modèle de curriculum vitae" +
+                " - Créer des articles" +
+                " - Créer du contenu vidéo",
+            id: 4
+        },
+        {
+            title: "Entraide - Bienveillance - Conseil",
+            id: 5
+        },
+        {
+            title: "Salaire / Marketing / Coûts hébergements",
+            id: 6
+        },
+        {
+            title: "Ordinateurs, écrans " +
+                "- Licences - Outils de développement et de gestion de base de données ",
+            id: 7
+        },
+        {
+            title: "18/25 ans - Etudiants - Public en recherche d’alternance",
+            id: 8
+        }],
+        partenaires: [],
+        propositions: [],
+        canaux: [],
+        segment: [],
+        structure: [],
+        flux: [],
+        activites: []
     }
-    ];
+    checkResult() {
+        console.log("object");
+    }
+
 
 }
