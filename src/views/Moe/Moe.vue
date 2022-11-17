@@ -35,7 +35,7 @@
     <v-row justify="center">
       <v-img class="mb-12" src="@/assets/development.png" max-width="193" height="200"></v-img>
     </v-row>
-    <v-row align="center" justify="center" v-if="game1">
+    <v-row class="mb-15" align="center" justify="center" v-if="game1">
       <Transition>
         <v-stepper v-model="e6" vertical width="1000" elevation="8" shaped outlined>
           <!-- 1/5 -->

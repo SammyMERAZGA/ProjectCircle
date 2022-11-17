@@ -30,7 +30,7 @@
       <h1 class="overline white--text">Project Nightmare</h1>
     </v-row>
     <h3 class="white--text mr-2">{{ this.$store.state.sanction }}/3</h3>
-    <v-tooltip bottom>
+    <v-tooltip color="teal darken-3" bottom>
       <template v-slot:activator="{ on, attrs }">
         <v-icon
             dark
