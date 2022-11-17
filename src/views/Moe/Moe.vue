@@ -35,7 +35,7 @@
     <v-row justify="center">
       <v-img class="mb-12" src="@/assets/development.png" max-width="193" height="200"></v-img>
     </v-row>
-    <v-row align="center" justify="center" v-if="game1">
+    <v-row class="mb-15" align="center" justify="center" v-if="game1">
       <Transition>
         <v-stepper v-model="e6" vertical width="1000" elevation="8" shaped outlined>
           <!-- 1/5 -->
@@ -127,10 +127,6 @@
               <v-btn class="rounded-xl ml-2" @click="changeCard(6, false)"> Utiliser git fusion </v-btn>
             </v-row>
           </v-stepper-content>
-          <v-row class="ma-5" justify="end">
-            <h1 class="mr-2">{{ nbLives }}</h1>
-            <v-icon x-large color="red">mdi-heart</v-icon>
-          </v-row>
         </v-stepper>
       </Transition>
     </v-row>
@@ -172,18 +168,30 @@
       </v-stepper>
     </v-row>
 
-    <v-snackbar v-model="snackbar" right color="success" align="center" min-width>
-      Bonne réponse <v-icon> mdi-thumb-up </v-icon>
-    </v-snackbar>
-    <v-snackbar color="red darken-4" v-model="snackbarFalse" :timeout="timeout"
-      >Aïe, ce n'est pas la bonne réponse. Vous prenez un avertissement !
+    <!-- SNACKBAR -->
+    <v-snackbar color="green darken-3" v-model="snackbarTrue" :timeout="timeout"
+    >Félicitations ! Vous avez trouvé la bonne réponse.
       <template v-slot:action="{ attrs }">
         <v-btn
-          class="rounded-xl"
-          color="white"
-          text
-          v-bind="attrs"
-          @click="snackbarFalse = false"
+            class="rounded-xl"
+            color="white"
+            text
+            v-bind="attrs"
+            @click="snackbarTrue = false"
+        >
+          Fermer
+        </v-btn>
+      </template>
+    </v-snackbar>
+    <v-snackbar color="red darken-4" v-model="snackbarFalse" :timeout="timeout"
+    >Aïe, ce n'est pas la bonne réponse. Vous prenez un avertissement !
+      <template v-slot:action="{ attrs }">
+        <v-btn
+            class="rounded-xl"
+            color="white"
+            text
+            v-bind="attrs"
+            @click="snackbarFalse = false"
         >
           Fermer
         </v-btn>
@@ -209,26 +217,34 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <!-- DIALOG GAME SUCCESS -->
     <v-dialog
-      v-model="dialogSuccess"
-      persistent
-      transition="dialog-top-transition"
-      max-width="600"
+        v-model="dialogSuccess"
+        transition="dialog-top-transition"
+        max-width="800"
+        persistent
     >
-      <v-card>
-        <v-toolbar color="#00796b" dark></v-toolbar>
-        <v-card-text>
-          <v-row align="center" justify="center">
-            <div class="text-h2 pa-12">Bravo</div>
-            <p class="text-center">Vous avez réussi le mini jeu !</p>
-          </v-row>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="#00796b" text to="/home"> J'y vais ! </v-btn>
-        </v-card-actions>
-      </v-card>
+      <template @click.stop="dialogSuccess = false">
+        <v-card class="rounded-lg" height="600">
+          <v-toolbar color="teal darken-2" dark
+          ><v-row align="center" justify="center"
+          ><v-toolbar-title
+          ><v-icon class="mr-5" x-large color="white">mdi-trophy</v-icon
+          >Victoire</v-toolbar-title
+          ></v-row
+          ></v-toolbar
+          >
+          <v-img class="rounded-lg ma-3" src="@/assets/gif/victory.gif" />
+          <v-card-actions class="justify-center">
+            <v-btn
+                class="rounded-md"
+                outlined
+                color="teal darken-3"
+                @click="goToHome()"
+            >Fermer</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </template>
     </v-dialog>
   </div>
 </template>

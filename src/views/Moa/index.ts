@@ -8,7 +8,10 @@ export default class Moa extends Vue {
   snackbarCodeFalse = false;
   dialogPresentation = true;
 
+  step = 0;
+
   dialogGameOver = false;
+  dialogVictory = false;
 
   disableQ2 = true;
   disableQ3 = true;
@@ -24,10 +27,12 @@ export default class Moa extends Vue {
     if (this.nbLives === 0) {
       this.snackbarFalse = false;
       this.dialogGameOver = true;
-      setTimeout(() => {
-        this.$router.push("/home");
-      }, 3000);
+      this.nbLives = 3;
     }
+  }
+
+  goToHome() {
+    this.$router.push("/home");
   }
 
   trueAnswerQ1() {
@@ -53,9 +58,7 @@ export default class Moa extends Vue {
   checkCode(code: string) {
     if (code === "3214") {
       console.log("Vous avez gagnez !");
-      setTimeout(() => {
-        this.$router.push("/home");
-      }, 3000);
+      this.dialogVictory = true;
     } else {
       console.log("Vous avez perdu !");
       this.snackbarCodeFalse = true;

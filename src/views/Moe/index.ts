@@ -71,7 +71,12 @@ export default class Moe extends Vue {
     if (this.nbLives === 0) {
       this.snackbarFalse = false;
       this.dialogSanction = true;
+      this.$store.state.sanction++;
     }
+  }
+
+  goToHome() {
+    this.$router.push("/home");
   }
 
   checkResult() {

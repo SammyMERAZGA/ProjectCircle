@@ -48,12 +48,17 @@
         <v-tab-item>
           <v-container fluid>
             <v-row>
-              <h4 class="overline text-decoration-underline mt-3 mb-3 ml-15">Rôle 1 : Product owner</h4>
-              <p class="body-2 mb-10 ml-15 mr-15">
-                Il est chargé de satisfaire les besoins des clients en menant à bien la livraison d’un produit de qualité.
-                Il sert d’interface entre l’équipe technique, l’équipe marketing et les clients. Au sein de son groupe de travail,
-                il est le premier responsable de la conception du produit..
-              </p>
+              <v-col md="4">
+                <v-img class="image" src="@/assets/resp-RH_.png" max-width="250"></v-img>
+              </v-col>
+              <v-col style="margin-left: -100px" md="8">
+                <h4 class="overline text-decoration-underline mt-3 mb-3">Rôle 1 : Product owner</h4>
+                <p class="body-2 mb-10 mr-15">
+                  Il est chargé de satisfaire les besoins des clients en menant à bien la livraison d’un produit de qualité.
+                  Il sert d’interface entre l’équipe technique, l’équipe marketing et les clients. Au sein de son groupe de travail,
+                  il est le premier responsable de la conception du produit..
+                </p>
+              </v-col>
             </v-row>
           </v-container>
         </v-tab-item>
@@ -63,12 +68,17 @@
         <v-tab-item>
           <v-container fluid>
             <v-row>
-              <h4 class="overline text-decoration-underline mt-3 mb-3 ml-15">Rôle 2 : Scrum master</h4>
-              <p class="body-2 mb-10 ml-15 mr-15">
-                Le Scrum Master agit comme un facilitateur au sein de l’équipe Scrum.
-                Il est chargé d’établir la méthodologie Scrum et d’aider ses membres à respecter les principes et pratiques Scrum.
-                Orienté vers les relations, il prend plaisir à aider ses collègues à évoluer et à s’améliorer.
-              </p>
+              <v-col md="4">
+                <v-img class="image" src="@/assets/resp-RH_.png" max-width="250"></v-img>
+              </v-col>
+              <v-col style="margin-left: -100px" md="8">
+                <h4 class="overline text-decoration-underline mt-3 mb-3 ml-15">Rôle 2 : Scrum master</h4>
+                <p class="body-2 mb-10 ml-15 mr-15">
+                  Le Scrum Master agit comme un facilitateur au sein de l’équipe Scrum.
+                  Il est chargé d’établir la méthodologie Scrum et d’aider ses membres à respecter les principes et pratiques Scrum.
+                  Orienté vers les relations, il prend plaisir à aider ses collègues à évoluer et à s’améliorer.
+                </p>
+              </v-col>
             </v-row>
           </v-container>
         </v-tab-item>
@@ -78,11 +88,16 @@
         <v-tab-item>
           <v-container fluid>
             <v-row>
-              <h4 class="overline text-decoration-underline mt-3 mb-3 ml-15">Rôle 3 : Team member</h4>
-              <p class="body-2 mb-10 ml-15 mr-15">
-                Cette équipe aux compétences variées a pour rôle de développer le meilleur produit possible. Selon les organisations,
-                elle peut se composer de profils tels que : développeurs, architectes, business analysts, testeurs,UX designers, etc.
-              </p>
+              <v-col md="4">
+                <v-img class="image" src="@/assets/resp-RH_.png" max-width="250"></v-img>
+              </v-col>
+              <v-col style="margin-left: -100px" md="8">
+                <h4 class="overline text-decoration-underline mt-3 mb-3 ml-15">Rôle 3 : Team member</h4>
+                <p class="body-2 mb-10 ml-15 mr-15">
+                  Cette équipe aux compétences variées a pour rôle de développer le meilleur produit possible. Selon les organisations,
+                  elle peut se composer de profils tels que : développeurs, architectes, business analysts, testeurs,UX designers, etc.
+                </p>
+              </v-col>
             </v-row>
           </v-container>
         </v-tab-item>
@@ -138,21 +153,34 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <!-- DIALOG GAME SUCCESS -->
-    <v-dialog v-model="dialogSuccess" persistent transition="dialog-top-transition" max-width="600">
-      <v-card>
-        <v-toolbar color="#00796b" dark></v-toolbar>
-        <v-card-text>
-          <v-row align="center" justify="center">
-            <div class="text-h2 pa-12">Bravo !</div>
-            <p class="text-center">Vous avez réussi le mini jeu ! </p>
-          </v-row>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="#00796b" text to="/home"> J'y vais ! </v-btn>
-        </v-card-actions>
-      </v-card>
+    <v-dialog
+        v-model="dialogSuccess"
+        transition="dialog-top-transition"
+        max-width="800"
+        persistent
+    >
+      <template @click.stop="dialogSuccess = false">
+        <v-card class="rounded-lg" height="600">
+          <v-toolbar color="teal darken-2" dark
+          ><v-row align="center" justify="center"
+          ><v-toolbar-title
+          ><v-icon class="mr-5" x-large color="white">mdi-trophy</v-icon
+          >Victoire</v-toolbar-title
+          ></v-row
+          ></v-toolbar
+          >
+          <v-img class="rounded-lg ma-3" src="@/assets/gif/victory.gif" />
+          <v-card-actions class="justify-center">
+            <v-btn
+                class="rounded-md"
+                outlined
+                color="teal darken-3"
+                @click="goToHome()"
+            >Fermer</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </template>
     </v-dialog>
     <!-- SNACKBAR -->
     <v-snackbar color="green darken-3" v-model="snackbarTrue" :timeout="timeout"

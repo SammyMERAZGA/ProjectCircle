@@ -6,26 +6,31 @@
     <h1 class="text-center black--text">Maîtrise d'ouvrage</h1>
     <!-- DIALOG PRESENTATION DU JEU -->
     <v-dialog
-        v-model="dialogPresentation"
-        transition="dialog-top-transition"
-        max-width="800"
-        persistent
+      v-model="dialogPresentation"
+      transition="dialog-top-transition"
+      max-width="800"
+      persistent
     >
       <template @click.stop="dialogPresentation = false">
         <v-card class="rounded-lg" height="600">
           <v-toolbar color="teal darken-2" dark
-          ><v-row align="center" justify="center"
-          ><v-toolbar-title><v-icon x-large color="white">mdi-chat-question-outline</v-icon> Contexte et règles</v-toolbar-title></v-row
-          ></v-toolbar
+            ><v-row align="center" justify="center"
+              ><v-toolbar-title
+                ><v-icon x-large color="white"
+                  >mdi-chat-question-outline</v-icon
+                >
+                Contexte et règles</v-toolbar-title
+              ></v-row
+            ></v-toolbar
           >
           <v-img class="rounded-lg ma-3" src="@/assets/gif/context.gif" />
           <v-card-actions class="justify-center">
             <v-btn
-                class="rounded-md"
-                outlined
-                color="teal darken-3"
-                @click="dialogPresentation = false"
-            >Fermer</v-btn
+              class="rounded-md"
+              outlined
+              color="teal darken-3"
+              @click="dialogPresentation = false"
+              >Fermer</v-btn
             >
           </v-card-actions>
         </v-card>
@@ -39,9 +44,27 @@
         max-width="200"
       ></v-img>
     </v-row>
+    <v-row justify="center" align="center">
+      <v-tooltip top color="teal darken-3">
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            class="mb-10"
+            fab
+            dark
+            v-on="on"
+            v-bind="attrs"
+            color="teal darken-1"
+            @click="dialogPresentation = true"
+          >
+            <v-icon dark> mdi-information-variant </v-icon>
+          </v-btn>
+        </template>
+        <span>Afficher les règles et le contexte</span>
+      </v-tooltip>
+    </v-row>
     <v-row class="mb-15" justify="center" align="center">
       <v-card class="elevation-10">
-        <v-tabs
+        <v-tabs v-model="step"
           class="rounded-sm"
           fixed-tabs
           background-color="teal darken-2"
@@ -58,7 +81,7 @@
               l'on recette ce dernier tout en ayant un suivi continu du chef de
               projet ?
             </p>
-            <v-row class="mt-5" justify="center">
+            <v-row class="mt-5 mb-10" justify="center" align="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
@@ -74,16 +97,6 @@
                 @click="removeLife()"
               >
                 Clôture
-              </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
-              <v-btn
-                class="ma-5 ml-15 rounded-lg"
-                outlined
-                color="teal darken-3"
-                @click="trueAnswerQ1()"
-              >
-                Production
               </v-btn>
               <v-btn
                 class="ma-5 rounded-lg"
@@ -93,13 +106,17 @@
               >
                 Conception & planification
               </v-btn>
-            </v-row>
-            <v-row class="ma-5" justify="end">
-              <h1 class="mr-2">{{ nbLives }}</h1>
-              <v-icon x-large color="red">mdi-heart</v-icon>
+              <v-btn
+                class="ma-5 rounded-lg"
+                outlined
+                color="teal darken-3"
+                @click="trueAnswerQ1(); step = 1"
+              >
+                Production
+              </v-btn>
             </v-row>
           </v-tab-item>
-          <v-tab :disabled="disableQ2"> Question 2 </v-tab>
+          <v-tab :disabled="disableQ2" title="Step 2"> Question 2 </v-tab>
           <v-tab-item>
             <h1 id="m-bottom" class="overline text-center grey--text">
               Question 2
@@ -109,7 +126,7 @@
               d'effectuer une planification détaillé, d'affiner le budget et
               spécifier de façon précise le produit ?
             </p>
-            <v-row class="mt-5" justify="center">
+            <v-row class="mt-5 mb-10" justify="center" align="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
@@ -126,13 +143,11 @@
               >
                 Production
               </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
                 color="teal darken-3"
-                @click="trueAnswerQ2()"
+                @click="trueAnswerQ2(); step = 2"
               >
                 Conception & Planification
               </v-btn>
@@ -145,12 +160,8 @@
                 Clôture
               </v-btn>
             </v-row>
-            <v-row class="ma-5" justify="end">
-              <h1 class="mr-2">{{ nbLives }}</h1>
-              <v-icon x-large color="red">mdi-heart</v-icon>
-            </v-row>
           </v-tab-item>
-          <v-tab :disabled="disableQ3"> Question 3 </v-tab>
+          <v-tab :disabled="disableQ3" title="Step 3"> Question 3 </v-tab>
           <v-tab-item>
             <h1 id="m-bottom" class="overline text-center grey--text">
               Question 3
@@ -160,12 +171,12 @@
               les objectifs, d'effectuer une première analyse budgétaire et
               d'introduire les ressources disponibles ?
             </p>
-            <v-row class="mt-5" justify="center">
+            <v-row class="mt-5 mb-10" justify="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
                 color="teal darken-3"
-                @click="trueAnswerQ3()"
+                @click="trueAnswerQ3(); step = 3"
               >
                 Cadrage
               </v-btn>
@@ -177,8 +188,6 @@
               >
                 Clôture
               </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
@@ -196,12 +205,8 @@
                 Production
               </v-btn>
             </v-row>
-            <v-row class="ma-5" justify="end">
-              <h1 class="mr-2">{{ nbLives }}</h1>
-              <v-icon x-large color="red">mdi-heart</v-icon>
-            </v-row>
           </v-tab-item>
-          <v-tab :disabled="disableQ4"> Question 4 </v-tab>
+          <v-tab :disabled="disableQ4" title="Step 4"> Question 4 </v-tab>
           <v-tab-item>
             <h1 id="m-bottom" class="overline text-center grey--text">
               Question 4
@@ -210,12 +215,12 @@
               Quelle est la phase de projet permettant de faire le bilan ainsi
               que la capitalisation du travail effectué ?
             </p>
-            <v-row class="mt-5" justify="center">
+            <v-row class="mt-5 mb-10" justify="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
                 color="teal darken-3"
-                @click="trueAnswerQ4()"
+                @click="trueAnswerQ4(); step = 4"
               >
                 Clôture
               </v-btn>
@@ -227,8 +232,6 @@
               >
                 Cadrage
               </v-btn>
-            </v-row>
-            <v-row class="mt-2" justify="center">
               <v-btn
                 class="ma-5 rounded-lg"
                 outlined
@@ -246,12 +249,8 @@
                 Conception & Planification
               </v-btn>
             </v-row>
-            <v-row class="ma-5" justify="end">
-              <h1 class="mr-2">{{ nbLives }}</h1>
-              <v-icon x-large color="red">mdi-heart</v-icon>
-            </v-row>
           </v-tab-item>
-          <v-tab :disabled="disableFinalEnigma"> Énigme finale </v-tab>
+          <v-tab :disabled="disableFinalEnigma" title="Step 5"> Énigme </v-tab>
           <v-tab-item>
             <h1 id="m-bottom" class="overline text-center grey--text">
               Énigme finale
@@ -297,6 +296,35 @@
         </v-tabs>
       </v-card>
     </v-row>
+    <v-dialog
+      v-model="dialogVictory"
+      transition="dialog-top-transition"
+      max-width="800"
+      persistent
+    >
+      <template @click.stop="dialogVictory = false">
+        <v-card class="rounded-lg" height="600">
+          <v-toolbar color="teal darken-2" dark
+            ><v-row align="center" justify="center"
+              ><v-toolbar-title
+                ><v-icon class="mr-5" x-large color="white">mdi-trophy</v-icon
+                >Victoire</v-toolbar-title
+              ></v-row
+            ></v-toolbar
+          >
+          <v-img class="rounded-lg ma-3" src="@/assets/gif/victory.gif" />
+          <v-card-actions class="justify-center">
+            <v-btn
+              class="rounded-md"
+              outlined
+              color="teal darken-3"
+              @click="goToHome()"
+              >Fermer</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </template>
+    </v-dialog>
     <!-- SNACKBAR -->
     <v-snackbar color="green darken-3" v-model="snackbarTrue"
       >Félicitations ! Vous avez trouvé la bonne réponse.
@@ -347,15 +375,32 @@
       max-width="600"
     >
       <v-card>
-        <v-toolbar color="red darken-2" dark
-          >Aïe aïe ! C'est là que tout se termine pour vous..</v-toolbar
-        >
+        <v-toolbar color="red darken-2" dark>
+          <v-row align="center" justify="center">
+            <v-toolbar-title
+              ><v-icon class="mr-2" color="white">mdi-alert</v-icon
+              >Sanction</v-toolbar-title
+            >
+          </v-row>
+        </v-toolbar>
         <v-card-text>
           <v-row align="center" justify="center">
-            <div class="text-h2 pa-12">GAME OVER !</div>
+            <v-img class="ma-5" src="@/assets/warning.png" max-width="300" />
             <p>
-              Vous allez être redirigé vers l'écran du choix des thématiques.
+              ⚠️ Attention, c'est ta troisième erreur, tu as donc une sanction !
             </p>
+          </v-row>
+          <v-row justify="end">
+            <v-card-action class="justify-center mb-2">
+              <v-spacer></v-spacer>
+              <v-btn
+                class="rounded-xl"
+                text
+                color="red darken-1"
+                @click="dialogGameOver = false"
+                >Fermer</v-btn
+              >
+            </v-card-action>
           </v-row>
         </v-card-text>
       </v-card>
