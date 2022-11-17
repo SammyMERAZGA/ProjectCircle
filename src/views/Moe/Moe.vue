@@ -302,22 +302,39 @@
     </v-snackbar>
     <!-- DIALOG GAME OVER -->
     <v-dialog
-      v-model="dialogSanction"
-      persistent
-      transition="dialog-top-transition"
-      max-width="600"
+        v-model="dialogSanction"
+        transition="dialog-top-transition"
+        max-width="600"
     >
       <v-card>
-        <v-card-title class="text-h5 grey lighten-2">Echec</v-card-title>
-        <v-card-text class="mt-5">
-          Apprenez vos leçons ! Vous avez un nouvel avertissement
-          <v-icon>mdi-alert-circle-outline</v-icon>
-          Attention, au bout de 3 avertissements vous serez viré.
+        <v-toolbar color="red darken-2" dark>
+          <v-row align="center" justify="center">
+            <v-toolbar-title
+            ><v-icon class="mr-2" color="white">mdi-alert</v-icon
+            >Sanction</v-toolbar-title
+            >
+          </v-row>
+        </v-toolbar>
+        <v-card-text>
+          <v-row align="center" justify="center">
+            <v-img class="ma-5" src="@/assets/warning.png" max-width="300" />
+            <p>
+              ⚠️ Attention, c'est ton troisième avertissement, tu as donc une sanction !
+            </p>
+          </v-row>
+          <v-row justify="end">
+            <v-card-action class="justify-center mb-2">
+              <v-spacer></v-spacer>
+              <v-btn
+                  class="rounded-xl"
+                  text
+                  color="red darken-1"
+                  @click="dialogSanction = false"
+              >Fermer</v-btn
+              >
+            </v-card-action>
+          </v-row>
         </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="error" text to="/home"> J'y vais ! </v-btn>
-        </v-card-actions>
       </v-card>
     </v-dialog>
     <v-dialog

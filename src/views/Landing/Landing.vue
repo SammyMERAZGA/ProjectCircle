@@ -11,6 +11,10 @@
       <li></li>
       <li></li>
       <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
     </ul>
     <img id="logo" src="@/assets/blackLogo.png" />
     <v-container>
@@ -24,7 +28,7 @@
           ></v-img>
         </v-row>
       </div>
-      <v-row class="middle" align="center" justify="center">
+      <v-row class="middle mb-15" align="center" justify="center">
         <v-btn class="mt-10 mr-10 rounded-xl" color="white" to="/context" light>
           <h3 class="overline black--text txt_right">Lancer le jeu</h3>
           <v-icon>mdi-controller</v-icon>

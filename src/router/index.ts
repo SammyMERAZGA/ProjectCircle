@@ -8,6 +8,8 @@ import Moa from "@/views/Moa/Moa.vue";
 import Rh from "@/views/Rh/Rh.vue";
 import Finance from "@/views/Finance/Finance.vue";
 import Unsuccessful from "@/views/Unsuccessful/Unsuccessful.vue";
+import Successful from "@/views/Successful/Successful.vue";
+
 
 Vue.use(VueRouter);
 
@@ -46,6 +48,11 @@ const routes: Array<RouteConfig> = [
     path: "/unsuccessful",
     name: "unsuccessful",
     component: Unsuccessful,
+  },
+  {
+    path: "/successful",
+    name: "successful",
+    component: Successful,
   },
   {
     path: "/play/finance",

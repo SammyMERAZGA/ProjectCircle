@@ -72,6 +72,7 @@ export default class Moe extends Vue {
       this.snackbarFalse = false;
       this.dialogSanction = true;
       this.$store.state.sanction++;
+      this.$store.commit("checkGameOver");
     }
   }
 
@@ -93,6 +94,7 @@ export default class Moe extends Vue {
       this.removeLife()
     } else {
       this.dialogSuccess = true
+      this.$store.state.moeOK = true;
     }
   }
   changeCard(numCard: number, valide: boolean) {

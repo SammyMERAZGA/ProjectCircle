@@ -1,7 +1,7 @@
 import Vue from "vue";
 import draggable from "vuedraggable";
 import { Component } from "vue-property-decorator";
-
+/* eslint-disable */ 
 @Component({
     components: {
         draggable
@@ -10,12 +10,12 @@ import { Component } from "vue-property-decorator";
 export default class Finance extends Vue {
     e6 = 1;
     dialog = false;
-    snackbar = false;
     dialogPresentation = true;
-    display = "Functional third party";
-    dialogSuccessScrum = false;
-    dialogErrorScrum = false;
     nbLives = 3;
+    snackbarCodeFalse = false;
+    dialogGameOver = false;
+    dialogVictory = false
+
     tasks = {
         ideas: [{
             title: "Entreprises - Sites d’aide " +
@@ -54,17 +54,45 @@ export default class Finance extends Vue {
             title: "18/25 ans - Etudiants - Public en recherche d’alternance",
             id: 8
         }],
+        // Partenaires statégiques
         partenaires: [],
+        // Activités/Ressources clés
+        activites: [],
+        // Propositions de valeur
         propositions: [],
+        // Canaux de distribution
         canaux: [],
+        // Relation client
+        relation: [],
+        // Segment de clientèle
         segment: [],
-        structure: [],
-        flux: [],
-        activites: []
-    }
-    checkResult() {
-        console.log("object");
+        //  Ressources
+        ressource: [],
+        //  Structure des coûts
+        structure: []
     }
 
+    checkResult(tasks: any) {
+        if (tasks.partenaires[0].id === 1 && tasks.canaux[0].id === 2 && tasks.propositions[0].id === 3 && tasks.activites[0].id === 4 && tasks.relation[0].id === 5 && tasks.structure[0].id === 6 && tasks.ressource[0].id === 7 && tasks.segment[0].id === 8) {
+            console.log("lets go");
+            this.dialogVictory = true;
+        } else {
+            this.removeLife()
+        }
+    }
 
+    removeLife() {
+        this.nbLives--;
+        this.snackbarCodeFalse = true;
+        if (this.nbLives === 0) {
+            this.snackbarCodeFalse = false;
+            this.dialogGameOver = true;
+            this.nbLives = 3;
+            this.$store.state.sanction++;
+            this.$store.commit("checkGameOver");
+        }
+    }
+    goToHome() {
+        this.$router.push("/home");
+    }
 }
