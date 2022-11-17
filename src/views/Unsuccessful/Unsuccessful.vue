@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>Vous avez reçu 3 avertissements</h1>
+    <h1 class="black--text mt-10">Vous avez reçu 3 avertissements</h1>
     <v-row align="center" justify="center">
-      <img id="manager" src="@/assets/game-over.png" />
+      <img class="rounded-xl elevation-10" id="manager" src="@/assets/game-over.png" />
     </v-row>
     <v-row align="center" justify="center">
       <v-btn
