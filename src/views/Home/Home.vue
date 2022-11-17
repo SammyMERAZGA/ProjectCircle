@@ -24,8 +24,8 @@
         :disabled="t.disable"
         @click="playSoundAndGoToAGame(t.link)"
       >
-        <v-img class="white--text align-end" height="250px" :src="t.imageValide" v-if="t.disable"></v-img>
-        <v-img class="white--text align-end" height="250px" :src="t.image" v-else></v-img>
+        <v-img class="white--text align-end" height="230px" :src="t.imageValide" v-if="t.disable"></v-img>
+        <v-img class="white--text align-end" height="230px" :src="t.image" v-else></v-img>
       </v-card>
     </v-row>
   </div>
