@@ -81,7 +81,7 @@
           <v-stepper-content step="1">
             <p class="body-2 mb-5 ml-5 mr-5">
               Depuis toujours l’entreprise ne possède qu’un seul développeur.
-              Néanmoins, AigriCompany a recruté deux nouveaux développeurs
+              Néanmoins, elle a recruté deux nouveaux développeurs
               n’ayant pas d’expérience dans la programmation à plusieurs.
             </p>
             <p class="body-2 mb-5 ml-5 mr-5">
@@ -111,7 +111,7 @@
             <p class="body-2 mb-5 ml-5 mr-5">
               C’est un système de contrôle de version qui va gérer les
               changements apportés à un code source au fil du temps. Quelle est
-              la premère étape selon vous ?
+              la première étape selon vous ?
             </p>
             <v-row align="center" justify="center" class="mb-2">
               <v-btn class="rounded-xl mr-2" @click="changeCard(3, true)">
@@ -132,10 +132,7 @@
               En voilà une bonne idée ! Utilisez git init, vous verrez que git a
               créé un dossier caché nommé .git qui enregistrera les informations
               sur votre projet ainsi que vos fichiers. Il faut maintenant créer les branches pour
-              chaque développeur git branch nomDeMaBranche
-            </p>
-            <p class="body-2 mb-5 ml-5 mr-5">
-              et faire un git checkout nomDeMaBranche afin de se mettre sur la
+              chaque développeur git branch nomDeMaBranche et faire un git checkout nomDeMaBranche afin de se mettre sur la
               branche en question. Maintenant, nous allons faire le premier commit
               ! Quelle est la commande a utiliser selon vous ?
             </p>
@@ -180,7 +177,7 @@
           </v-stepper-step>
           <v-stepper-content step="5">
             <p class="body-2 mb-5 ml-5 mr-5">
-              Après avoir pousser son code, l'étape cruciale : le merge
+              Après avoir poussé son code, l'étape cruciale : le merge
             </p>
             <p class="body-2 mb-10 ml-5 mr-5">
               Le merge va vous permettre de fusionner le code.
