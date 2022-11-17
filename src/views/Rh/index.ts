@@ -74,6 +74,7 @@ export default class Context extends Vue {
             this.goodScrum = 0;
             this.errorScrum = 0;
             this.dialogSuccess = true;
+            this.$store.state.rhOK = true;
         }
 
         this.getData();

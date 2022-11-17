@@ -16,17 +16,17 @@
       Choisis ta thématique 👇
     </h1>
     <v-row class="mt-5" align="center" justify="center">
-      <v-card
-        class="mr-15 ml-15 mb-15 rounded-xl elevation-15 cardsTheme"
-        max-width="400"
-        max-height="400"
-        v-for="t in thematic"
-        :key="t.title"
-        :to="t.link"
-      >
-        <v-img class="white--text align-end" height="250px" :src="t.image">
-        </v-img>
-      </v-card>
+        <v-card
+          class="mr-15 ml-15 mb-15 rounded-xl elevation-15 cardsTheme"
+          max-width="400"
+          max-height="400"
+          v-for="t in thematic"
+          :key="t.title"
+          :to="t.link"
+        >
+          <v-img class="white--text align-end" height="250px" :src="t.image" v-if="!t.disable">
+          </v-img>
+        </v-card>
     </v-row>
   </div>
 </template>
