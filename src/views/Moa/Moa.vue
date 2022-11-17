@@ -326,7 +326,7 @@
       </template>
     </v-dialog>
     <!-- SNACKBAR -->
-    <v-snackbar color="green darken-3" v-model="snackbarTrue"
+    <v-snackbar color="green darken-3" v-model="snackbarTrue" :timeout="timeout"
       >Félicitations ! Vous avez trouvé la bonne réponse.
       <template v-slot:action="{ attrs }">
         <v-btn
@@ -340,7 +340,7 @@
         </v-btn>
       </template>
     </v-snackbar>
-    <v-snackbar color="red darken-4" v-model="snackbarFalse"
+    <v-snackbar color="red darken-4" v-model="snackbarFalse" :timeout="timeout"
       >Aïe, ce n'est pas la bonne réponse. Vous prenez un avertissement !
       <template v-slot:action="{ attrs }">
         <v-btn
@@ -354,7 +354,7 @@
         </v-btn>
       </template>
     </v-snackbar>
-    <v-snackbar color="red darken-4" v-model="snackbarCodeFalse"
+    <v-snackbar color="red darken-4" v-model="snackbarCodeFalse" :timeout="timeout"
       >Ce n'est pas le bon code ! Veuillez réessayer.
       <template v-slot:action="{ attrs }">
         <v-btn
@@ -387,7 +387,7 @@
           <v-row align="center" justify="center">
             <v-img class="ma-5" src="@/assets/warning.png" max-width="300" />
             <p>
-              ⚠️ Attention, c'est ta troisième erreur, tu as donc une sanction !
+              ⚠️ Attention, c'est ton troisième avertissement, tu as donc une sanction !
             </p>
           </v-row>
           <v-row justify="end">
