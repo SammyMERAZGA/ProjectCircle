@@ -138,7 +138,7 @@
             </v-row>
           </v-container>
         </v-tab-item>
-        <v-tab @click="getData()"> Enigme </v-tab>
+        <v-tab @click="getData('')"> Enigme </v-tab>
         <v-tab-item>
           <v-container fluid>
             <h2 class="mb-10 ml-15 mr-15 mt-10 text-center">
