@@ -25,6 +25,7 @@ export default class Moa extends Vue {
     if (this.nbLives === 0) {
       this.snackbarFalse = false;
       this.dialogGameOver = true;
+      this.musicLose();
       this.$store.state.sanction++;
       this.$store.commit("checkGameOver");
       this.nbLives = 3;
@@ -60,10 +61,33 @@ export default class Moa extends Vue {
     this.disableFinalEnigma = false;
   }
 
+  musicLose() {
+    if (this.$store.state.sanction == 0) {
+      var audio = new Audio(require("@/assets/bouh.mp3"));
+      audio.play();
+    } else if (this.$store.state.sanction == 1) {
+      var audio = new Audio(require("@/assets/bouh.mp3"));
+      audio.play();
+    } else if (this.$store.state.sanction == 2) {
+      this.musicGameOver();
+    }
+  }
+
+  musicGameOver() {
+    var audio = new Audio(require("@/assets/gameOver.mp3"));
+    audio.play();
+  }
+
+  musicWin() {
+    var audio = new Audio(require("@/assets/applause.wav"));
+    audio.play();
+  }
+
   checkCode(code: string) {
     if (code === "3214") {
       this.dialogVictory = true;
       this.$store.state.gameSuccess++;
+      this.musicWin();
       this.$store.state.moaOK = true;
       this.$store.commit("checkSuccess");
     } else {
@@ -71,6 +95,7 @@ export default class Moa extends Vue {
       if (this.nbLives === 0) {
         this.snackbarFalse = false;
         this.dialogGameOver = true;
+        this.musicLose();
         this.$store.state.sanction++;
         this.$store.commit("checkGameOver");
         this.nbLives = 3;

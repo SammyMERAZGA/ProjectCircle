@@ -3,8 +3,8 @@
     <v-row class="mt-15" align="center" justify="center">
       <v-img
         class="rounded-xl elevation-10"
-        src="@/assets/gif/context.gif"
-        max-width="950"
+        src="@/assets/gif/contexte.gif"
+        max-width="1000"
       />
     </v-row>
     <h3 class="black--text text-center mt-12 mb-5">Lancer le jeu !</h3>

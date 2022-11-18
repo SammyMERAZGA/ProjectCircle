@@ -31,6 +31,28 @@ export default class Context extends Vue {
     }
   }
 
+  musicLose() {
+    if (this.$store.state.sanction == 0) {
+      var audio = new Audio(require("@/assets/bouh.mp3"));
+      audio.play();
+    } else if (this.$store.state.sanction == 1) {
+      var audio = new Audio(require("@/assets/bouh.mp3"));
+      audio.play();
+    } else if (this.$store.state.sanction == 2) {
+      this.musicGameOver();
+    }
+  }
+
+  musicGameOver() {
+    var audio = new Audio(require("@/assets/gameOver.mp3"));
+    audio.play();
+  }
+
+  musicWin() {
+    var audio = new Audio(require("@/assets/applause.wav"));
+    audio.play();
+  }
+
   goToHome() {
     this.$router.push("/home");
   }
@@ -74,6 +96,7 @@ export default class Context extends Vue {
       this.errorScrum = 0;
       this.$store.state.sanction++;
       this.dialogSanction = true;
+      this.musicLose();
       this.$store.commit("checkGameOver");
     }
 
@@ -81,6 +104,7 @@ export default class Context extends Vue {
       this.snackbarTrue = false;
       this.goodScrum = 0;
       this.errorScrum = 0;
+      this.musicWin();
       this.dialogSuccess = true;
       this.$store.state.gameSuccess++;
       this.$store.state.rhOK = true;

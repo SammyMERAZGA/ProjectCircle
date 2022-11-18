@@ -72,6 +72,7 @@ export default class Moe extends Vue {
     if (this.nbLives === 0) {
       this.snackbarFalse = false;
       this.dialogSanction = true;
+      this.musicLose();
       this.$store.state.sanction++;
       this.$store.commit("checkGameOver");
       this.nbLives = 3;
@@ -80,6 +81,28 @@ export default class Moe extends Vue {
 
   goToHome() {
     this.$router.push("/home");
+  }
+
+  musicLose() {
+    if (this.$store.state.sanction == 0) {
+      var audio = new Audio(require("@/assets/bouh.mp3"));
+      audio.play();
+    } else if (this.$store.state.sanction == 1) {
+      var audio = new Audio(require("@/assets/bouh.mp3"));
+      audio.play();
+    } else if (this.$store.state.sanction == 2) {
+      this.musicGameOver();
+    }
+  }
+
+  musicGameOver() {
+    var audio = new Audio(require("@/assets/gameOver.mp3"));
+    audio.play();
+  }
+
+  musicWin() {
+    var audio = new Audio(require("@/assets/applause.wav"));
+    audio.play();
   }
 
   playSoundClick() {
@@ -108,6 +131,7 @@ export default class Moe extends Vue {
       this.removeLife()
     } else {
       this.dialogSuccess = true
+      this.musicWin();
       this.$store.state.moeOK = true;
       this.$store.state.gameSuccess++;
       this.$store.commit("checkSuccess");

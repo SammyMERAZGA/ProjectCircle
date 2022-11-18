@@ -78,6 +78,28 @@ export default class Finance extends Vue {
         structure: [],
     };
 
+    musicLose() {
+        if (this.$store.state.sanction == 0) {
+            var audio = new Audio(require("@/assets/bouh.mp3"));
+            audio.play();
+        } else if (this.$store.state.sanction == 1) {
+            var audio = new Audio(require("@/assets/bouh.mp3"));
+            audio.play();
+        } else if (this.$store.state.sanction == 2) {
+            this.musicGameOver();
+        }
+    }
+
+    musicGameOver() {
+        var audio = new Audio(require("@/assets/gameOver.mp3"));
+        audio.play();
+    }
+
+    musicWin() {
+        var audio = new Audio(require("@/assets/applause.wav"));
+        audio.play();
+    }
+
     playSoundClick() {
         var audio = new Audio(require("@/assets/clickButton.wav"));
         audio.play();
@@ -97,6 +119,7 @@ export default class Finance extends Vue {
             this.$store.state.financeOK = true;
             this.$store.state.gameSuccess++;
             this.dialogVictory = true;
+            this.musicWin();
             this.$store.commit("checkSuccess");
         } else {
             this.removeLife();
@@ -109,6 +132,7 @@ export default class Finance extends Vue {
         if (this.nbLives === 0) {
             this.snackbarCodeFalse = false;
             this.dialogGameOver = true;
+            this.musicLose();
             this.nbLives = 3;
             this.$store.state.sanction++;
             this.$store.commit("checkGameOver");
