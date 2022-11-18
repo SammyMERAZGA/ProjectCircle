@@ -27,7 +27,7 @@
       </v-list>
     </v-menu>
     <v-row align="center" justify="center">
-      <h1 class="overline white--text">Project Nightmare TEST</h1>
+      <h1 class="overline white--text">Project Nightmare</h1>
     </v-row>
     <h3 class="white--text mr-2">{{ this.$store.state.gameSuccess }}/4</h3>
     <v-tooltip color="teal darken-3" bottom>
