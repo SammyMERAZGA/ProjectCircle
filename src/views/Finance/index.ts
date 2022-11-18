@@ -16,7 +16,7 @@ export default class Finance extends Vue {
     snackbarCodeFalse = false;
     dialogGameOver = false;
     dialogVictory = false;
-
+    
     tasks = {
         ideas: [
             {
