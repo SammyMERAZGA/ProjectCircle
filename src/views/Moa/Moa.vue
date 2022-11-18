@@ -23,7 +23,7 @@
               ></v-row
             ></v-toolbar
           >
-          <v-img class="rounded-lg ma-3" src="@/assets/gif/context.gif" />
+          <v-img class="rounded-lg ma-3" src="@/assets/gif/contexte.gif" />
           <v-card-actions class="justify-center">
             <v-btn
               class="rounded-md"
@@ -329,7 +329,7 @@
               ></v-row
             ></v-toolbar
           >
-          <v-img class="rounded-lg ma-3" src="@/assets/gif/victory.gif" />
+          <v-img class="rounded-lg ma-3" src="@/assets/gif/victoryMOE.gif" />
           <v-card-actions class="justify-center">
             <v-btn
               class="rounded-md"
