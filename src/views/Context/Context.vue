@@ -3,7 +3,7 @@
     <v-row class="mt-15" align="center" justify="center">
       <v-img
         class="rounded-xl elevation-10"
-        src="@/assets/gif/context.gif"
+        src="@/assets/gif/contexte.gif"
         max-width="950"
       />
     </v-row>
