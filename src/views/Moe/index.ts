@@ -28,16 +28,24 @@ export default class Moe extends Vue {
       index: 1,
       items: [
         {
+          title: "git commit -m",
+          id: 4,
+        },
+        {
           title: "Git init",
           id: 1,
+        },
+        {
+          title: "git add",
+          id: 3,
         },
         {
           title: "git branch",
           id: 2,
         },
         {
-          title: "git add",
-          id: 3,
+          title: "git merge",
+          id: 6
         },
       ],
     },
@@ -46,17 +54,9 @@ export default class Moe extends Vue {
       index: 2,
       items: [
         {
-          title: "git commit -m",
-          id: 4,
-        },
-        {
           title: "git push origin",
           id: 5,
         },
-        {
-          title: "git merge",
-          id: 6
-        }
       ]
     },
   ]
@@ -74,6 +74,7 @@ export default class Moe extends Vue {
       this.dialogSanction = true;
       this.$store.state.sanction++;
       this.$store.commit("checkGameOver");
+      this.nbLives = 3;
     }
   }
 
@@ -87,16 +88,23 @@ export default class Moe extends Vue {
   }
 
   checkResult() {
-    let itemsIdx = 1
-    let error = false
-    for (let i = 0; i < this.rows[1].items.length; i++) {
-      if (this.rows[1].items[i].id !== itemsIdx) {
+    let tempCard: any[] = []
+    let error: Boolean = false
+    let valideResponse = [1, 2, 3, 4, 5, 6]
+    this.rows[1].items.forEach(card => {
+      tempCard.push(card.id)
+    });
+    let i: number = 0
+    tempCard.forEach(tempCard => {
+      if (tempCard !== valideResponse[i]) {
+        console.log(valideResponse[i])
+        console.log(tempCard)
         error = true
       }
-      itemsIdx++
-    }
-    if (error && this.nbLives > 0) {
-      this.snackbarFalse = false
+      i++
+    });
+    console.log(error)
+    if (error) {
       this.removeLife()
     } else {
       this.dialogSuccess = true
