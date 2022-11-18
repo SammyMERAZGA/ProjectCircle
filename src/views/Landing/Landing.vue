@@ -111,7 +111,7 @@
                 </h4>
                 <p class="body-2 mb-10">
                   Pour chaque mini jeu tu auras 3 tentatives. Si au bout de ces 3 tentatives tu n'as pas résolu l'énigme alors tu
-                  receveras un avertissement. Au bout de 3 avertissements tu seras licencié et tu devras recommencer le jeu depuis le début.
+                  recevras un avertissement. Au bout de 3 avertissements tu seras licencié et tu devras recommencer le jeu depuis le début.
                 </p>
               </v-container>
             </v-card-text>
