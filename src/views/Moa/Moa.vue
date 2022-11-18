@@ -131,7 +131,7 @@
             </h1>
             <p class="mr-15 ml-15">
               Quelle est la phase de projet qui permet de définir les moyens,
-              d'effectuer une planification détaillé, d'affiner le budget et
+              d'effectuer une planification détaillée, d'affiner le budget et
               spécifier de façon précise le produit ?
             </p>
             <v-row class="mt-5 mb-10" justify="center" align="center">
