@@ -66,7 +66,7 @@
         <span>Afficher les règles et le contexte</span>
       </v-tooltip>
     </v-row>
-    <v-row class="mb-15" align="center" justify="center" v-if="!game1">
+    <v-row class="mb-15" align="center" justify="center" v-if="game1">
       <Transition>
         <v-stepper
           v-model="e6"
