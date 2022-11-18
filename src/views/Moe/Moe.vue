@@ -90,7 +90,7 @@
             <p class="body-2 mb-5 ml-5 mr-5">
               Un problème se pose, comment travailler ensemble sur le projet
               afin d’augmenter la productivité ? Essayez de lui fournir un moyen
-              de coder à plusieurs
+              de coder à plusieurs.
             </p>
             <v-row align="center" justify="center" class="mb-2">
               <v-btn class="rounded-xl mr-2" @click="changeCard(2, false)">
@@ -180,7 +180,7 @@
           </v-stepper-step>
           <v-stepper-content step="5">
             <p class="body-2 mb-5 ml-5 mr-5">
-              Après avoir poussé son code, l'étape cruciale : le merge
+              Après avoir poussé son code, l'étape cruciale : le merge.
             </p>
             <p class="body-2 mb-10 ml-5 mr-5">
               Le merge va vous permettre de fusionner le code.
@@ -209,7 +209,7 @@
         style="padding: 50px"
       >
         <h1 class="overline text-center mb-15">
-          Mettez la liste dans l'odre des cycles git !
+          Mettez la liste dans l'ordre des cycles git !
         </h1>
         <draggable
           v-model="rows"
